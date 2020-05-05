@@ -1,0 +1,159 @@
+html, body{
+    height: 100%;
+}
+
+.bodyContainer{
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: .5em;
+}
+
+/*styles to push footer towards bottom of page*/
+#container{
+    min-height: 100%;
+}
+
+#main{
+    overflow: auto;  /*creates scroll bar once this section extends past one page*/
+    padding-bottom: 50px;  /*must match footer height, prevents content in main from disappearing behind footer*/
+}
+
+/*additional footer styles below*/
+#footer{
+    position: relative;  /*positioned relative to its normal position*/
+    height: 50px;
+    margin-top: -50px;   /*equal to negative height of the footer - without this, footer would be pushed below height
+    of the viewport.  This rule pulls the footer back into view.*/
+    clear: both;  /*specifies on which sides of an element floating elements are not allowed to float*/
+}
+/*end of styles to push footer towards bottom*/
+
+/*Navigation bar styles*/
+.navbar{
+    background-color: #292b2c;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.navbar-brand:hover{
+    color: darkgray !important;
+}
+
+.nav-item a:hover {
+    color: white !important;
+}
+
+/*items under each drop down menu*/
+.dropdown-menu a:hover{
+    color: white;
+    background-color: #292b2c;
+}
+
+/*buttons in navbar*/
+.cmp-nav-btn{
+    color: purple;
+    margin-right: 5px;
+    background-color: buttonface;
+    font-size: .9em;
+    border: none;
+}
+
+.cmp-nav-btn:hover{
+    color: blue;
+    margin-right: 5px;
+    background-color: buttonface;
+}
+
+/*hamburger menu*/
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/*footer styles*/
+.footer{
+    background-color: #343a40;
+    color: white;
+}
+
+.footer p{
+    padding-top: .4em;
+    text-align: center !important;
+}
+
+/*styles for forms*/
+label{
+    font-weight: 700;
+    width: 6em;
+    text-align: center;
+}
+
+input[type=text], input[type=select]{
+    width: 40%;
+    padding: .25em;
+    margin: 5px 0px 10px 0px;  /*top, right, bottom, left*/
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=number]:focus {
+    background-color: #ddd;
+}
+
+.submit{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;  /*top & bottom, left & right*/
+    margin-left: 6em;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.8;
+}
+
+.submit:hover{
+    opacity: 1;
+}
+
+/*styles below place state and zip on one line in the form*/
+.formFieldStateAndZip input[type=text]{
+    width: 10%;
+}
+
+.formFieldStateAndZip .zip {
+    width: 3em;
+}
+/*end of styles to place state and zip on one line*/
+
+
+/*Styles for tables*/
+.contractorTable{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.contractorTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.contractorTable tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.contractorTable tr:hover {
+    background-color: #343a40;
+    color: white;
+}
+
+.contractorTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+.table-format .tableHeader{
+    text-align: center;
+}
