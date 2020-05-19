@@ -1,7 +1,7 @@
 package contractmanagementportal
 
 class ContractStatus {
-    ContractStatus contractStatus
+    String status
 
     static constraints = {
     }

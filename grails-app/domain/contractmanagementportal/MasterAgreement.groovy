@@ -1,11 +1,13 @@
 package contractmanagementportal
 
 class MasterAgreement {
+    String name
     String pointOfContactFName
     String pointOfContactLName
-    String pointOfContactPhoneNumber
-    Number spendCap
-    Date   beginDate
+    String pointOfContactPhone
+    String pointOfContactEmail
+    Double spendCap
+    Date   startDate
     Date   endDate
     Office office  //relationship type?
     BidType bidType  //relationship type?

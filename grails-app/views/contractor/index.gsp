@@ -18,6 +18,7 @@
     <h1>Contractors</h1>
     <hr>
     <p>Below are the Contractors currently in the database.</p>
+
     <table class="contractorTable">
         <tr>
             <th>#</th>
@@ -28,6 +29,7 @@
             <th>Zip</th>
             <th>Payment Type</th>
             <th>COI</th>
+            <th>Edit</th>
         </tr>
         <g:each status="i" var="contractor" in="${c}">
 
@@ -38,8 +40,12 @@
                 <td>${contractor.city}</td>
                 <td>${contractor.state}</td>
                 <td>${contractor.zip}</td>
-                <td>ACH</td>
+                <td>${contractor.paymentType.name}</td>
                 <td>PDF Link</td>
+                <td>
+                    <g:link controller="contractor" action="edit"
+                            params="[id: contractor.id, name: contractor.name, street: contractor.street, city: contractor.city, state: contractor.state, zip: contractor.zip, paymentType: contractor.paymentType.name]">Edit</g:link>
+                </td>
             </tr>
 
         </g:each>

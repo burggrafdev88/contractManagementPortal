@@ -2,7 +2,7 @@ package contractmanagementportal
 
 class CertificateOfInsurance {
     Date expirationDate
-    String location
+    //String location
 
     static belongsTo = [contractor: Contractor]
 

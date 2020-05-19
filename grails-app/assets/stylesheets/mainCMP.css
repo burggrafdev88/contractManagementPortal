@@ -82,27 +82,33 @@ html, body{
     text-align: center !important;
 }
 
-/*styles for forms*/
+/*styles for contractor form
 label{
     font-weight: 700;
-    width: 6em;
+    width: 8em;
     text-align: center;
 }
 
 input[type=text], input[type=select]{
     width: 40%;
     padding: .25em;
-    margin: 5px 0px 10px 0px;  /*top, right, bottom, left*/
+    margin: 5px 0px 10px 0px;  /*top, right, bottom, left
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=number]:focus {
     background-color: #ddd;
+} */
+
+/*do something with this
+.formFieldWithHelpTip{
+    position: relative;
+    width: 50%;
 }
 
 .submit{
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;  /*top & bottom, left & right*/
+    padding: 14px 20px;  /*top & bottom, left & right
     margin-left: 6em;
     border: none;
     cursor: pointer;
@@ -114,22 +120,211 @@ input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input
     opacity: 1;
 }
 
-/*styles below place state and zip on one line in the form*/
-.formFieldStateAndZip input[type=text]{
-    width: 10%;
+/*styles form form field for state and zip
+.formFieldStateAndZip{
+    display: table;
+}
+
+.formFieldState{
+    display: table-cell;
+    width: 350px;
+}
+
+.formFieldZip{
+    display: table-cell;
 }
 
 .formFieldStateAndZip .zip {
-    width: 3em;
+    width: 96px;
+    text-align: right;
+}
+
+.formFieldZip input[type=text]{
+    width: 25%;
 }
 /*end of styles to place state and zip on one line*/
+
+/*styles for form field COI and expiration date
+.formFieldCOIAndDate{
+    display: table;
+}
+
+.formFieldCOI{
+    display: table-cell;
+    position: relative;
+    width: 350px;
+}
+
+.formFieldCOI input{
+    width: 200px;
+}
+
+.formFieldExpDate{
+    display: table-cell;
+    position: relative;
+}
+
+.formFieldExpDate .dateLabel{
+    text-align: right;
+    width: 96px;
+} */
+
+/**********Styles for forms**********/
+/* Style the container */
+.container {
+    border-radius: 5px;
+    background-color: #6a6d6f1f;
+    margin-bottom: .5em;
+    padding: 20px;
+}
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+/* Style inputs, select elements and text areas */
+input[type=text], input[type=number], input[type=tel], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    width: 55%;
+}
+
+/****Styles for columns widths*****/
+/*Floating column for first row of labels (furthest left): 15% width */
+.col-15 {
+    float: left;
+    width: 15%;
+    margin-top: 6px;
+    padding-left: .5em;
+    font-weight: 700;
+}
+
+/* Floating column for a majority of inputs: 40% width */
+.col-40 {
+    float: left;
+    width: 40%;
+    margin-top: 6px;
+}
+
+/* Floating column for a majority of inputs: 40% width */
+.col-45 {
+    float: left;
+    width: 45%;
+    margin-top: 6px;
+}
+
+/* Remove left padding*/
+.removeLeftPadding {
+    padding-left: 0em;
+}
+
+.rightAlignText{
+    text-align: right;
+}
+
+.positionRel{
+    position: relative;
+}
+
+/***Styles specific to add and edit contractor forms***/
+/* Floating column for zip label: 5% width*/
+.col-05.zip {
+    float: left;
+    width: 5%;
+    margin-top: 6px;
+    margin-left: 5em;
+    padding-left: 0em;
+    font-weight: 700;
+}
+
+/* Floating column for zip input: 13% width */
+.col-13 {
+    float: left;
+    width: 13%;
+    margin-top: 6px;
+}
+
+/*Style sets initial input color for edit contractor form*/
+.readOnly{
+    color: gray;
+}
+
+.editIcon{
+    float: left;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-edit{
+    font-size: 1.5em;
+    color: #7543b7;
+}
+
+.fa-edit:hover{
+    color: #c72e2e;
+    cursor: pointer;
+}
+/***End styles specific to add and edit contractor forms***/
+
+/* Clear floats after the columns*/
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/***** Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other *****/
+@media screen and (max-width: 600px) {
+    .col-05, .col-05.zip, .col-13, .col-15, .col-25, .col-40, input[type=submit] {
+        width: 90%;
+        margin-top: 0;
+        padding-left: 0em;
+        margin-left: 0em;
+    }
+
+    /*Styles for the edit contractor column and icon*/
+    .col-05{
+        width: 10%;
+    }
+
+    .fa-edit{
+        font-size: 1.25em;
+    }
+
+    /* Style the submit button */
+    input[type=submit] {
+        margin-top: .5em;
+    }
+
+}
+/*****End of styles for responsive layout*****/
+/**********End of styles for forms**********/
 
 
 /*Styles for tables*/
 .contractorTable{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 80%;
+    width: 90%;
 }
 
 .contractorTable td {
@@ -143,7 +338,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input
 
 .contractorTable tr:hover {
     background-color: #343a40;
-    color: white;
+    color: red;
 }
 
 .contractorTable th {
@@ -157,3 +352,90 @@ input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input
 .table-format .tableHeader{
     text-align: center;
 }
+
+/*********Styles for help-tip**********/
+.help-tip{
+    /*position: absolute;*/
+    top: -10px;
+    right: -10px;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    line-height: 13px;
+    cursor: default;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+    z-index: 1;
+    opacity: .95;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+
+}
+
+.help-tip p{    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #1E2021;
+    padding: 10px;
+    width: 300px;
+    /*position: absolute;*/
+    border-radius: 12px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip p:before{ /* The pointer of the tooltip */
+    /*position: absolute;*/
+    color: yellow;
+    content: '';
+    width:0;
+    height: 0;
+    /*border:6px solid transparent;*/
+    /*border-bottom-color:#1E2021;*/
+    right:10px;
+    top:-12px;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    /*position: absolute;*/
+    top:-40px;
+    left:0;
+}
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+/*********End styles for help-tip**********/

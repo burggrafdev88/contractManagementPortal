@@ -5,6 +5,9 @@ import org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverte
 
 import java.nio.charset.StandardCharsets
 
+//logger 'org.hibernate.type.descriptor.sql.BasicBinder', TRACE, ['STDOUT']    /*Added by PCB 0n 5/14*/
+//logger 'org.hibernate.SQL', TRACE, ['STDOUT']  /*Added by PCB 0n 5/14*/
+
 conversionRule 'clr', ColorConverter
 conversionRule 'wex', WhitespaceThrowableProxyConverter
 
