@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Add a Master Agreement</title>
+    <title>Add Master Agreement</title>
     <meta name="layout" content="mainCMP"/>
 </head>
 
@@ -21,7 +21,7 @@
 
     <div class="container">
 
-        <form method="POST" action="save">
+        <form method="POST" controller="masterAgreement" action="save">
 
             <div class="row">
                 <div class="col-15">

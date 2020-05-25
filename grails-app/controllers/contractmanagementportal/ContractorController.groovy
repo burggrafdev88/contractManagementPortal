@@ -11,7 +11,7 @@ class ContractorController {
     }
 
     def create(){
-        println 'I made it to add for Contractors.'
+        println 'I made it to create for Contractors.'
 //        [paymentTypes: PaymentType.list()]
     }
 

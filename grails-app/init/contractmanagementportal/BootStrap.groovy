@@ -27,11 +27,8 @@ class BootStrap {
         new MasterAgreementStatus(status: "Active").save()
         new MasterAgreementStatus(status: "Inactive").save()
 
-//      new CertificateOfInsurance(date: '01-05-2025').save()
-
-        /*
-        new Contractor(name: "Moore Engineering", street: "1800 Southwest Bouelvard", city: "Kansas City", state: "MO",
-        zip: "64108", payment_type_id: 1, contractor_status_id: 1).save()*/
+//        new Contractor(name: "Moore Engineering", street: "1800 Southwest Boulevard", city: "Kansas City", state: "MO",
+//        zip: "64108", payment_type_id: 1).save()
 
     }
     def destroy = {

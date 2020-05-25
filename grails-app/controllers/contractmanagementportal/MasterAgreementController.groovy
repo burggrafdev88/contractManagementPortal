@@ -11,7 +11,7 @@ class MasterAgreementController {
     }
 
     def create(){
-        println 'I made it to add for Master Agreements.'
+        println 'I made it to create for Master Agreements.'
     }
 
     def save(){
@@ -31,6 +31,11 @@ class MasterAgreementController {
         masterAgreementInstance.properties = params
         masterAgreementInstance.save()
         redirect(action: "index")
+    }
+
+    def show(Long id){
+
+
     }
 
 }

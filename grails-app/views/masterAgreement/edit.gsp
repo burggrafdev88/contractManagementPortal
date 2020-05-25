@@ -21,6 +21,8 @@
     <div class="container">
 
         <form method="POST" action="../update">
+            <!--hidden field for contractor id-->
+            <input name="id" value="${params.id}" hidden>
 
             <div class="row">
                 <div class="col-15">
@@ -154,7 +156,7 @@
             <input type="hidden" id="masterAgreementStatus" name="masterAgreementStatus" value="1">
 
             <div class="row">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Update">
             </div>
         </form>
 
@@ -163,6 +165,8 @@
 </div>
 
 <script>
+
+    let clicked = false;
 
     /*Styles for datepickers*/
     $('.datepickerStartDate').datepicker({
@@ -189,34 +193,71 @@
     /*When icon edit icon is clicked, set readOnly/disabled values to false and input/icon colors to appropriate colors*/
     $( "#editIcon" ).click(function() {
         console.log("Edit called.")
-        $( "#office" ).prop('disabled', false)
-        $( "#name" ).prop('readonly', false)
-        $( "#contractor" ).prop('disabled', false)
-        $( "#pointOfContactFName" ).prop('readonly', false)
-        $( "#pointOfContactLName" ).prop('readonly', false)
-        $( "#pointOfContactPhone" ).prop('readonly', false)
-        $( "#pointOfContactEmail" ).prop('readonly', false)
-        $( "#startDate" ).prop('disabled', false)
-        $( "#endDate" ).prop('disabled', false)
-        $( "#spendCap" ).prop('readonly', false)
-        $( "#bidType" ).prop('disabled', false)
+        
+        if(!clicked){
+            $( "#office" ).prop('disabled', false)
+            $( "#name" ).prop('readonly', false)
+            $( "#contractor" ).prop('disabled', false)
+            $( "#pointOfContactFName" ).prop('readonly', false)
+            $( "#pointOfContactLName" ).prop('readonly', false)
+            $( "#pointOfContactPhone" ).prop('readonly', false)
+            $( "#pointOfContactEmail" ).prop('readonly', false)
+            $( "#startDate" ).prop('disabled', false)
+            $( "#endDate" ).prop('disabled', false)
+            $( "#spendCap" ).prop('readonly', false)
+            $( "#bidType" ).prop('disabled', false)
 
-        //Set input color to black
-        $( "#office" ).css("color", "black")
-        $( "#name" ).css("color", "black")
-        $( "#contractor" ).css("color", "black")
-        $( "#pointOfContactFName" ).css("color", "black")
-        $( "#pointOfContactLName" ).css("color", "black")
-        $( "#pointOfContactPhone" ).css("color", "black")
-        $( "#pointOfContactEmail" ).css("color", "black")
-        $( "#paymentType" ).css("color", "black")
-        $( "#startDate" ).css("color", "black")
-        $( "#endDate" ).css("color", "black")
-        $( "#spendCap" ).css("color", "black")
-        $( "#bidType" ).css("color", "black")
+            //Set input color to black
+            $( "#office" ).css("color", "black")
+            $( "#name" ).css("color", "black")
+            $( "#contractor" ).css("color", "black")
+            $( "#pointOfContactFName" ).css("color", "black")
+            $( "#pointOfContactLName" ).css("color", "black")
+            $( "#pointOfContactPhone" ).css("color", "black")
+            $( "#pointOfContactEmail" ).css("color", "black")
+            $( "#paymentType" ).css("color", "black")
+            $( "#startDate" ).css("color", "black")
+            $( "#endDate" ).css("color", "black")
+            $( "#spendCap" ).css("color", "black")
+            $( "#bidType" ).css("color", "black")
 
-        //Set icon to red
-        $("#editIcon").css("color", "red")
+            //Set icon to red
+            $("#editIcon").css("color", "red")
+
+            clicked = true;
+        } else{
+            $( "#office" ).prop('disabled', true)
+            $( "#name" ).prop('readonly', true)
+            $( "#contractor" ).prop('disabled', true)
+            $( "#pointOfContactFName" ).prop('readonly', true)
+            $( "#pointOfContactLName" ).prop('readonly', true)
+            $( "#pointOfContactPhone" ).prop('readonly', true)
+            $( "#pointOfContactEmail" ).prop('readonly', true)
+            $( "#startDate" ).prop('disabled', true)
+            $( "#endDate" ).prop('disabled', true)
+            $( "#spendCap" ).prop('readonly', true)
+            $( "#bidType" ).prop('disabled', true)
+
+            //Set input color to black
+            $( "#office" ).css("color", "gray")
+            $( "#name" ).css("color", "gray")
+            $( "#contractor" ).css("color", "gray")
+            $( "#pointOfContactFName" ).css("color", "gray")
+            $( "#pointOfContactLName" ).css("color", "gray")
+            $( "#pointOfContactPhone" ).css("color", "gray")
+            $( "#pointOfContactEmail" ).css("color", "gray")
+            $( "#paymentType" ).css("color", "gray")
+            $( "#startDate" ).css("color", "gray")
+            $( "#endDate" ).css("color", "gray")
+            $( "#spendCap" ).css("color", "gray")
+            $( "#bidType" ).css("color", "gray")
+
+            //Set icon to red
+            $("#editIcon").css("color", "#7543b7")
+
+            clicked = false;
+        }
+
     });
 
 </script>

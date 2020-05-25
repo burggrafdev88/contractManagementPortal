@@ -8,7 +8,7 @@
 <%@ page import="contractmanagementportal.PaymentType" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Add a Contractor</title>
+    <title>Add Contractor</title>
     <meta name="layout" content="mainCMP"/>
 </head>
 

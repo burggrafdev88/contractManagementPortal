@@ -82,93 +82,6 @@ html, body{
     text-align: center !important;
 }
 
-/*styles for contractor form
-label{
-    font-weight: 700;
-    width: 8em;
-    text-align: center;
-}
-
-input[type=text], input[type=select]{
-    width: 40%;
-    padding: .25em;
-    margin: 5px 0px 10px 0px;  /*top, right, bottom, left
-}
-
-input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=number]:focus {
-    background-color: #ddd;
-} */
-
-/*do something with this
-.formFieldWithHelpTip{
-    position: relative;
-    width: 50%;
-}
-
-.submit{
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;  /*top & bottom, left & right
-    margin-left: 6em;
-    border: none;
-    cursor: pointer;
-    width: 40%;
-    opacity: 0.8;
-}
-
-.submit:hover{
-    opacity: 1;
-}
-
-/*styles form form field for state and zip
-.formFieldStateAndZip{
-    display: table;
-}
-
-.formFieldState{
-    display: table-cell;
-    width: 350px;
-}
-
-.formFieldZip{
-    display: table-cell;
-}
-
-.formFieldStateAndZip .zip {
-    width: 96px;
-    text-align: right;
-}
-
-.formFieldZip input[type=text]{
-    width: 25%;
-}
-/*end of styles to place state and zip on one line*/
-
-/*styles for form field COI and expiration date
-.formFieldCOIAndDate{
-    display: table;
-}
-
-.formFieldCOI{
-    display: table-cell;
-    position: relative;
-    width: 350px;
-}
-
-.formFieldCOI input{
-    width: 200px;
-}
-
-.formFieldExpDate{
-    display: table-cell;
-    position: relative;
-}
-
-.formFieldExpDate .dateLabel{
-    text-align: right;
-    width: 96px;
-} */
-
 /**********Styles for forms**********/
 /* Style the container */
 .container {
@@ -299,6 +212,7 @@ input[type=submit] {
         margin-top: 0;
         padding-left: 0em;
         margin-left: 0em;
+        text-align: left;
     }
 
     /*Styles for the edit contractor column and icon*/
@@ -321,32 +235,50 @@ input[type=submit] {
 
 
 /*Styles for tables*/
-.contractorTable{
+.infoTable{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 90%;
 }
 
-.contractorTable td {
+.infoTable.fullWidth{
+    width: 100%;
+}
+
+.infoTable td {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-.contractorTable tr:nth-child(even){
+.infoTable tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
-.contractorTable tr:hover {
+.infoTable tr:hover {
     background-color: #343a40;
     color: red;
 }
 
-.contractorTable th {
+.infoTable th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: black;
     color: white;
+}
+
+.infoTable i{
+    color: deeppink;
+    font-size: 1.5em;
+}
+
+.infoTable i:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.infoTable .centered{
+    text-align: center;
 }
 
 .table-format .tableHeader{
@@ -439,3 +371,100 @@ input[type=submit] {
     100% { opacity:100%; }
 }
 /*********End styles for help-tip**********/
+
+
+/*********Styles for containers at top of show action**********/
+.infoContainer{
+    border-radius: 5px;
+    background-color: #6a6d6f1f;
+    margin-bottom: .5em;
+    padding: 20px;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-container .label{
+    font-weight: 700;
+    float: left;
+    padding: .5em .5em;  /*top & bottom   left & right*/
+}
+
+.flex-container .data{
+    color: blue;
+    float: right;
+    padding: .5em .5em;   /*top & bottom   left & right*/
+}
+
+.grid-container .label.expand.right{
+    color: green;
+    cursor: pointer;
+    float: right;
+}
+
+.grid-container .label.hide.right{
+    color: red;
+    cursor: pointer;
+    float: right;
+}
+
+.closedContainers{
+    display: none;
+}
+
+.grid-container{
+    display: grid;
+    grid-column-gap: 25px;
+    grid-row-gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-left: 20px;
+}
+
+.closedContainers.grid-container{
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.grid-container .grid-item .label{
+    font-weight: 700;
+    float: left;
+    padding: .5em .5em;  /*top & bottom   left & right*/
+}
+
+.grid-container .grid-item .data{
+    color: blue;
+    padding: .5em .5em;   /*top & bottom   left & right*/
+}
+
+
+
+/*
+.showActionContainer{
+    border-radius: 5px;
+    background-color: #6a6d6f1f;
+    margin-bottom: .5em;
+    padding: 20px;
+}
+
+.col-15.showAction{
+    float: left;
+    width: 15%;
+    margin-top: 6px;
+    /*margin-left: 5em;
+    padding-left: 0em;
+    font-weight: 700;
+    text-align: right;
+}
+
+.col-25.showAction{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    /*margin-left: 5em;
+    padding-left: 0em;
+    font-weight: 400;
+    text-align: center;
+} */
+

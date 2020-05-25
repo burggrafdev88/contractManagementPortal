@@ -19,7 +19,7 @@
     <hr>
     <p>Below are the Contractors currently in the database.</p>
 
-    <table class="contractorTable">
+    <table class="infoTable">
         <tr>
             <th>#</th>
             <th>Name</th>

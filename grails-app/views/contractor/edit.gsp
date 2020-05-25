@@ -141,7 +141,7 @@
             </div>
 
             <div class="row">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Update">
             </div>
         </form>
 
@@ -150,6 +150,8 @@
 </div>
 
 <script>
+    let clicked = false;
+
     /*Set initial select value for state*/
     $( document ).ready(function() {
         $("#state").val("${params.state}");
@@ -171,23 +173,49 @@
     /*When icon edit icon is clicked, set readOnly/disabled values to false and input/icon colors to appropriate colors*/
     $( "#editIcon" ).click(function() {
         console.log("Edit called.")
-        $( "#name" ).prop('readonly', false)
-        $( "#street" ).prop('readonly', false)
-        $( "#city" ).prop('readonly', false)
-        $( "#state" ).prop('disabled', false)
-        $( "#zip" ).prop('readonly', false)
-        $( "#paymentType" ).prop('disabled', false)
 
-        //Set input color to black
-        $( "#name" ).css("color", "black")
-        $( "#street" ).css("color", "black")
-        $( "#city" ).css("color", "black")
-        $( "#state" ).css("color", "black")
-        $( "#zip" ).css("color", "black")
-        $( "#paymentType" ).css("color", "black")
+        if(!clicked){
+            $( "#name" ).prop('readonly', false)
+            $( "#street" ).prop('readonly', false)
+            $( "#city" ).prop('readonly', false)
+            $( "#state" ).prop('disabled', false)
+            $( "#zip" ).prop('readonly', false)
+            $( "#paymentType" ).prop('disabled', false)
 
-        //Set icon to red
-        $("#editIcon").css("color", "red")
+            //Set input color to black
+            $( "#name" ).css("color", "black")
+            $( "#street" ).css("color", "black")
+            $( "#city" ).css("color", "black")
+            $( "#state" ).css("color", "black")
+            $( "#zip" ).css("color", "black")
+            $( "#paymentType" ).css("color", "black")
+
+            //Set icon to red
+            $("#editIcon").css("color", "red")
+
+            clicked = true;
+        } else{
+            $( "#name" ).prop('readonly', true)
+            $( "#street" ).prop('readonly', true)
+            $( "#city" ).prop('readonly', true)
+            $( "#state" ).prop('disabled', true)
+            $( "#zip" ).prop('readonly', true)
+            $( "#paymentType" ).prop('disabled', true)
+
+            //Set input color to black
+            $( "#name" ).css("color", "gray")
+            $( "#street" ).css("color", "gray")
+            $( "#city" ).css("color", "gray")
+            $( "#state" ).css("color", "gray")
+            $( "#zip" ).css("color", "gray")
+            $( "#paymentType" ).css("color", "gray")
+
+            //Set icon to red
+            $("#editIcon").css("color", "#7543b7")
+
+            clicked = false;
+        }
+
     });
 
 </script>

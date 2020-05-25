@@ -18,7 +18,7 @@
     <hr>
     <p>Below are the Master Agreements for the 10th District.</p>
 
-    <table class="contractorTable">
+    <table class="infoTable">
         <tr>
             <th>#</th>
             <th>Office</th>
@@ -29,7 +29,7 @@
             <th>End Date</th>
             <th>Spend to Date</th>
             <th>Spend Cap</th>
-            <th>Edit</th>
+            <th>View/Edit</th>
         </tr>
         <g:each status="i" var="masterAgreement" in="${m}">
 
@@ -44,12 +44,12 @@
                 <td>Spend to Date</td>
                 <td>$${masterAgreement.spendCap}</td>
                 <td>
-                    <g:link controller="masterAgreement" action="edit"
+                    <g:link controller="MasterAgreement" action="show"
                             params="[id: masterAgreement.id, officeID: masterAgreement.office.id, contractName: masterAgreement.name, bidType: masterAgreement.bidType.id,
                                      contractorID: masterAgreement.contractor.id, startDate: masterAgreement.startDate,
                                      endDate: masterAgreement.endDate, spendCap: masterAgreement.spendCap, pointOfContactFName: masterAgreement.pointOfContactFName,
                             pointOfContactLName: masterAgreement.pointOfContactLName, pointOfContactEmail: masterAgreement.pointOfContactEmail,
-                            pointOfContactPhone: masterAgreement.pointOfContactPhone]">Edit</g:link>
+                            pointOfContactPhone: masterAgreement.pointOfContactPhone]">View</g:link>
                 </td>
             </tr>
 
