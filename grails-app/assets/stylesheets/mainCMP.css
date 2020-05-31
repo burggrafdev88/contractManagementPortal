@@ -410,6 +410,11 @@ input[type=submit] {
     float: right;
 }
 
+.grid-container .label.edit.right{
+    text-align: right;
+    float: right;
+}
+
 .closedContainers{
     display: none;
 }

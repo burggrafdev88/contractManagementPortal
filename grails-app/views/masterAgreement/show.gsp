@@ -144,7 +144,8 @@
             <th>SOW Name</th>
             <th>Invoice Total</th>
             <th>SOW Amount</th>
-            <th>Expand</th>
+            <th>View</th>
+            <th class="centered">Expand</th>
         </tr>
 
         <tr>
@@ -152,6 +153,9 @@
             <td>Lorem Ipsom SOW Name</td>
             <td>$xxx.xx</td>
             <td>$xxx.xx</td>
+            <td>
+                <g:link controller="SOW" action="show">View</g:link>
+            </td>
             <td class="centered">
                 <i class="fas fa-angle-left" id="expandArrow" onclick="expandInvoices();" title="Expand Invoices"></i>
             </td>

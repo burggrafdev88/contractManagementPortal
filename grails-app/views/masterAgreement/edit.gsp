@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="editIcon">
-                    <i id="editIcon" class="far fa-edit" title="Edit Contractor"></i>
+                    <i id="editIcon" class="far fa-edit" title="Edit Master Agreement"></i>
                 </div>
 
             </div>

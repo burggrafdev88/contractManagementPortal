@@ -34,7 +34,7 @@ class MasterAgreementController {
     }
 
     def show(Long id){
-
+        println 'I made it to show for Master Agreement.'
 
     }
 

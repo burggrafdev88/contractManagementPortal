@@ -49,4 +49,5 @@ class ContractorController {
         contractorInstance.save()
         redirect(action: "index")
     }
+
 }
