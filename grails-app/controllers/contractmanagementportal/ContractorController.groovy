@@ -1,5 +1,6 @@
 package contractmanagementportal
 
+
 class ContractorController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -18,7 +19,13 @@ class ContractorController {
     def save(){
         println 'I made it to save for Contractors.'
         def contractorInstance = new Contractor(params)
-        contractorInstance.save()
+
+        if(!contractorInstance.save()){
+            println 'Contractor not saved.'
+        } else{
+            println 'Contractor saved.'
+        }
+
         redirect(action: "index")
     }
 
@@ -46,7 +53,16 @@ class ContractorController {
         println("I made it to update for Contractors")
         def contractorInstance = Contractor.get(id)
         contractorInstance.properties = params
-        contractorInstance.save()
+
+        if(!contractorInstance.save()){
+            println 'Contractor did not update.'
+        } else{
+            println 'Contractor updated.'
+        }
+
+        println contractorInstance.id
+        println contractorInstance.name
+
         redirect(action: "index")
     }
 

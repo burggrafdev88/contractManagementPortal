@@ -17,7 +17,13 @@ class MasterAgreementController {
     def save(){
         println 'I made it to save for Master Agreements'
         def masterAgreementInstance = new MasterAgreement(params)
-        masterAgreementInstance.save()
+
+        if(!masterAgreementInstance.save()){
+            println 'Master Agreement did not save.'
+        } else{
+            println 'Master agreement saved.'
+        }
+
         redirect(action: "index")
     }
 
