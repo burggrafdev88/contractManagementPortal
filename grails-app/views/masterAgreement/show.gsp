@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="grid-item">
-                    <g:link class="label" controller="SOW" action="create">Add Scope of Work</g:link>
+                    <g:link class="label" controller="SOW" action="create" params="[masterAgreementID: masterAgreement.id]">Add Scope of Work</g:link>
                 </div>
 
                 <div class="grid-item">

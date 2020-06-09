@@ -25,7 +25,7 @@ class MasterAgreementService {
         print 'I made it the deleteMasterAgreement service.'
 
         /*What does .delete return? Logic here seems backwards so I inserted a ! */
-        if(!masterAgreementInstanceInstance.delete(flush: true)){
+        if(masterAgreementInstance.delete(flush: true)){
             println 'Master Agreement deleted'
         } else{
             println 'Master Agreement not deleted'

@@ -2,6 +2,8 @@ package contractmanagementportal
 
 class SOWController {
 
+    def SOWService
+
     def index() {
         println 'I made it to index for SOW.'
     }
@@ -12,11 +14,11 @@ class SOWController {
 
     def save(){
         println 'I made it to save for SOW.'
-
         def sowInstance = new SOW(params)
-        sowInstance.save()
+        println sowInstance.validate()
+        SOWService.saveSOW(sowInstance)
 
-        render 'SOW saved.'
+        redirect(controller: "MasterAgreement", action: "index")
     }
 
     def edit(){
@@ -25,10 +27,11 @@ class SOWController {
 
     def update(Long id){
         println("I made it to update for SOW")
-        def SOWInstance = SOW.get(id)
-        SOWInstance.properties = params
-        SOWInstance.save()
-        redirect(action: "index")
+        def sowInstance = SOW.get(id)
+        sowInstance.properties = params
+        SOWService.saveSOW(sowInstance)
+
+        render 'SOW saved.'
     }
 
     def show(){

@@ -43,7 +43,7 @@
 
             </div>
 
-            <input type="hidden" id="master_agreement_id" name="master_agreement_id" value="1">
+            <input type="hidden" id="masterAgreement" name="masterAgreement" value="${params.masterAgreementID}">
 
             <div class="row">
                 <input type="submit" value="Submit">
