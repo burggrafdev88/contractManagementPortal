@@ -22,17 +22,17 @@
         <div class="grid-container">
             <div class="grid-item">
                 <div class="label">Office:</div>
-                <div class="data">Kansas City</div>
+                <div class="data">${masterAgreement.office.name}</div>
             </div>
 
             <div class="grid-item">
                 <div class="label">Contract Name:</div>
-                <div class="data">Mechanical Work</div>
+                <div class="data">${masterAgreement.name}</div>
             </div>
 
             <div class="grid-item">
                 <div class="label">Contractor:</div>
-                <div class="data">Morrissey Engineering</div>
+                <div class="data">${masterAgreement.contractor.name}</div>
             </div>
 
             <div class="grid-item">
@@ -46,12 +46,12 @@
             <div class="grid-container">
                 <div class="grid-item">
                     <div class="label">Contract Start Date:</div>
-                    <div class="data">05/23/2020</div>
+                    <div class="data">${masterAgreement.startDate}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">Contract End Date:</div>
-                    <div class="data">05/23/2023</div>
+                    <div class="data">${masterAgreement.endDate}</div>
                 </div>
 
                 <div class="grid-item">
@@ -69,7 +69,7 @@
 
                 <div class="grid-item">
                     <div class="label">Contract Amount $</div>
-                    <div class="data">$100,000</div>
+                    <div class="data">${masterAgreement.spendCap}</div>
                 </div>
 
                 <div class="grid-item">
@@ -82,27 +82,27 @@
 
                 <div class="grid-item">
                     <div class="label">POC First Name:</div>
-                    <div class="data">Philip</div>
+                    <div class="data">${masterAgreement.pointOfContactFName}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">POC Last Name:</div>
-                    <div class="data">Burggraf</div>
+                    <div class="data">${masterAgreement.pointOfContactLName}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">POC Email:</div>
-                    <div class="data">burggrafdev88@gmail.com</div>
+                    <div class="data">${masterAgreement.pointOfContactEmail}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">POC Phone:</div>
-                    <div class="data">913-208-0068</div>
+                    <div class="data">${masterAgreement.pointOfContactPhone}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">Bid Type</div>
-                    <div class="data">Competitive - Formal</div>
+                    <div class="data">${masterAgreement.bidType.id}</div>
                 </div>
 
                 <div class="grid-item">
@@ -115,18 +115,23 @@
 
                 <div class="grid-item">
 
-                </div>
-
-                <div class="grid-item">
-
-                </div>
-
-                <div class="grid-item">
-                    <g:link class="label" controller="masterAgreement" action="edit">Edit</g:link>
                 </div>
 
                 <div class="grid-item">
                     <g:link class="label" controller="SOW" action="create">Add Scope of Work</g:link>
+                </div>
+
+                <div class="grid-item">
+                    <g:link class="label" controller="masterAgreement" action="edit" params="[id: masterAgreement.id]">Edit</g:link>
+                </div>
+
+                <div class="grid-item">
+                    <form method="post" action="delete">
+                        <input name="id" value="${masterAgreement.id}" hidden>
+                        <button type="submit" class="link-button">
+                            Delete
+                        </button>
+                    </form>
                 </div>
 
                 <div class="grid-item">

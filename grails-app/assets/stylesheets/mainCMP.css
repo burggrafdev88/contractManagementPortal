@@ -234,7 +234,7 @@ input[type=submit] {
 /**********End of styles for forms**********/
 
 
-/*Styles for tables*/
+/**********Styles for tables**********/
 .infoTable{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -277,13 +277,39 @@ input[type=submit] {
     cursor: pointer;
 }
 
+.infoTable .link:hover {
+    color: white;
+    cursor: pointer;
+}
+
 .infoTable .centered{
     text-align: center;
 }
 
+/*Styles for delete-button-link in the info-table*/
+.infoTable .link-button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    color: #007bff;
+}
+
+.infoTable .link-button:hover{
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.infoTable .link-button:focus {
+    outline: none;
+}
+
+/*End of styles for delete-button link*/
+
 .table-format .tableHeader{
     text-align: center;
 }
+/**********End of styles for tables*********/
 
 /*********Styles for help-tip**********/
 .help-tip{
@@ -443,33 +469,21 @@ input[type=submit] {
     padding: .5em .5em;   /*top & bottom   left & right*/
 }
 
-
-
-/*
-.showActionContainer{
-    border-radius: 5px;
-    background-color: #6a6d6f1f;
-    margin-bottom: .5em;
-    padding: 20px;
-}
-
-.col-15.showAction{
-    float: left;
-    width: 15%;
-    margin-top: 6px;
-    /*margin-left: 5em;
-    padding-left: 0em;
+/*Styles for button-link delete*/
+.grid-container .link-button {
+    background: none;
+    border: none;
+    font-size: 1em;
     font-weight: 700;
-    text-align: right;
+    color: #007bff;
 }
 
-.col-25.showAction{
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-    /*margin-left: 5em;
-    padding-left: 0em;
-    font-weight: 400;
-    text-align: center;
-} */
+.grid-container .link-button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
 
+.grid-container .link-button:focus {
+    outline: none;
+}
+/*End of styles for button-link delete*/

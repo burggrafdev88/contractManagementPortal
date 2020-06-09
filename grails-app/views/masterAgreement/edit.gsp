@@ -22,7 +22,7 @@
 
         <form method="POST" action="../update">
             <!--hidden field for contractor id-->
-            <input name="id" value="${params.id}" hidden>
+            <input name="id" value="${masterAgreement.id}" hidden>
 
             <div class="row">
                 <div class="col-15">
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="col-40">
-                    <input type="text" id="name" class="readOnly" name="name" value="${params.contractName}" required readonly>
+                    <input type="text" id="name" class="readOnly" name="name" value="${masterAgreement.name}" required readonly>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="pointOfContactFName" class="readOnly" name="pointOfContactFName" title="Point of Contact First Name" value="${params.pointOfContactFName}" required readonly>
+                    <input type="text" id="pointOfContactFName" class="readOnly" name="pointOfContactFName" title="Point of Contact First Name" value="${masterAgreement.pointOfContactFName}" required readonly>
                 </div>
 
                 <div class="col-15 rightAlignText">
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="pointOfContactLName" class="readOnly" name="pointOfContactLName" title="Point of Contact Last Name" value="${params.pointOfContactLName}" required readonly>
+                    <input type="text" id="pointOfContactLName" class="readOnly" name="pointOfContactLName" title="Point of Contact Last Name" value="${masterAgreement.pointOfContactLName}" required readonly>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="tel" id="pointOfContactPhone" class="readOnly" name="pointOfContactPhone" title="Point of Contact Phone Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXXXXXXXX" value="${params.pointOfContactPhone}" required readonly>
+                    <input type="tel" id="pointOfContactPhone" class="readOnly" name="pointOfContactPhone" title="Point of Contact Phone Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXXXXXXXX" value="${masterAgreement.pointOfContactPhone}" required readonly>
                 </div>
 
             </div>
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="col-45 removeLeftPadding">
-                    <input type="text" id="pointOfContactEmail" class="readOnly" name="pointOfContactEmail" title="Point of Contact Email" value="${params.pointOfContactEmail}" required readonly>
+                    <input type="text" id="pointOfContactEmail" class="readOnly" name="pointOfContactEmail" title="Point of Contact Email" value="${masterAgreement.pointOfContactEmail}" required readonly>
                 </div>
             </div>
 
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="startDate" name="startDate" class="datepickerStartDate readOnly" data-date-format="yyyy-mm-dd" value="${params.startDate}" required disabled>
+                    <input type="text" id="startDate" name="startDate" class="datepickerStartDate readOnly" data-date-format="yyyy-mm-dd" value="${masterAgreement.startDate}" required disabled>
                 </div>
 
                 <div class="col-15 rightAlignText">
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="endDate" name="endDate" class="datepickerEndDate readOnly" data-date-format="yyyy-mm-dd" value="${params.endDate}" required disabled>
+                    <input type="text" id="endDate" name="endDate" class="datepickerEndDate readOnly" data-date-format="yyyy-mm-dd" value="${masterAgreement.endDate}" required disabled>
                 </div>
             </div>
 
@@ -130,7 +130,7 @@
 
                 <div class="col-15 removeLeftPadding">
                     <input type="number" id="spendCap" class="readOnly" name="spendCap" min="0" step="1"
-                           pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" title="Contract Spend Cap" value="${params.spendCap}"required readonly>
+                           pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" title="Contract Spend Cap" value="${masterAgreement.spendCap}"required readonly>
                 </div>
 
                 <div class="help-tip">
@@ -185,9 +185,10 @@
 
     /*Set initial select value for drop downs*/
     $( document ).ready(function() {
-        $("#office").val("${params.officeID}");
-        $("#contractor").val("${params.contractorID}");
-        $("#bidType").val("${params.bidType}")
+        $('#office').val("${masterAgreement.office.id}");
+        $('#bidType').val("${masterAgreement.bidType.id}");
+        $('#contractor').val("${masterAgreement.contractor.id}");
+        console.log('Set initial drop down values executed.');
     });
 
     /*When icon edit icon is clicked, set readOnly/disabled values to false and input/icon colors to appropriate colors*/

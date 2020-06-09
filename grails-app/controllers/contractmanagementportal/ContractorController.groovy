@@ -2,6 +2,7 @@ package contractmanagementportal
 
 
 class ContractorController {
+    def contractorService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -13,18 +14,13 @@ class ContractorController {
 
     def create(){
         println 'I made it to create for Contractors.'
-//        [paymentTypes: PaymentType.list()]
     }
 
     def save(){
         println 'I made it to save for Contractors.'
-        def contractorInstance = new Contractor(params)
 
-        if(!contractorInstance.save()){
-            println 'Contractor not saved.'
-        } else{
-            println 'Contractor saved.'
-        }
+        def contractorInstance = new Contractor(params)
+        contractorService.saveContractor(contractorInstance)
 
         redirect(action: "index")
     }
@@ -36,17 +32,10 @@ class ContractorController {
         [p:paymentTypeList]
     }  */
 
-    def edit(){
+    def edit(Long id){
         println 'I made it to edit for Contractors'
-        def id = params.id
-        def name = params.name
-        def street = params.street
-        def city = params.city
-        def state = params.state
-        def zip = params.zip
-        def paymentType = params.paymentType
-
-        render(view: "edit")
+        def contractorInstance = Contractor.get(id)
+        render(view: "edit", model: [contractor: contractorInstance])
     }
 
     def update(Long id){
@@ -54,14 +43,14 @@ class ContractorController {
         def contractorInstance = Contractor.get(id)
         contractorInstance.properties = params
 
-        if(!contractorInstance.save()){
-            println 'Contractor did not update.'
-        } else{
-            println 'Contractor updated.'
-        }
+        contractorService.saveContractor(contractorInstance)
+        redirect(action: "index")
+    }
 
-        println contractorInstance.id
-        println contractorInstance.name
+    def delete(Long id){
+        println 'I made it to delete for Contractors'
+        def contractorInstance = Contractor.get(id)
+        contractorService.deleteContractor(contractorInstance)
 
         redirect(action: "index")
     }

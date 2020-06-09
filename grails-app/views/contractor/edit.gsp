@@ -21,7 +21,7 @@
     <div class="container">
         <form method="POST" action="../update">
             <!--hidden field for contractor id-->
-            <input name="id" value="${params.id}" hidden>
+            <input name="id" value="${contractor.id}" hidden>
 
             <div class="row">
                 <div class="col-15">
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-40">
-                    <input class="readOnly" type="text" id="name" name="name" value="${params.name}" readonly>
+                    <input class="readOnly" type="text" id="name" name="name" value="${contractor.name}" readonly>
                 </div>
 
                 <div class="editIcon">
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col-40">
-                    <input class="readOnly" type="text" id="street" name="street" value="${params.street}" readonly>
+                    <input class="readOnly" type="text" id="street" name="street" value="${contractor.street}" readonly>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="col-40">
-                    <input class="readOnly" type="text" id="city" name="city" value="${params.city}" readonly>
+                    <input class="readOnly" type="text" id="city" name="city" value="${contractor.street}" readonly>
                 </div>
             </div>
 
@@ -122,7 +122,7 @@
                     <label for="zip">Zip:</label>
                 </div>
                 <div class="col-13">
-                    <input class="readOnly" type="text" id="zip" name="zip" value="${params.zip}" readonly>
+                    <input class="readOnly" type="text" id="zip" name="zip" value="${contractor.zip}" readonly>
                 </div>
 
             </div>
@@ -152,22 +152,11 @@
 <script>
     let clicked = false;
 
-    /*Set initial select value for state*/
+    /*Set initial select value for state and payment type*/
     $( document ).ready(function() {
-        $("#state").val("${params.state}");
-    });
+        $("#state").val("${contractor.state}");
+        $("#paymentType").val("${contractor.paymentType.id}");
 
-    /*Set initial select value for paymentType*/
-    $( document ).ready(function() {
-        if(${params.paymentType == 'ACH'}){
-            console.log("Payment type should be set to ACH.");
-            $("#paymentType").val(${1});
-        } else if(${params.paymentType == 'Credit Card'}){
-            console.log("Payment type should be set to credit card");
-            $("#paymentType").val(${2});
-        } else{
-            console.log("Error. No payment type was selected.");
-        }
     });
 
     /*When icon edit icon is clicked, set readOnly/disabled values to false and input/icon colors to appropriate colors*/
