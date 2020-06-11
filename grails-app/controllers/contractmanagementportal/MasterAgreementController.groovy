@@ -37,7 +37,7 @@ class MasterAgreementController {
         masterAgreementInstance.properties = params
         masterAgreementService.saveMasterAgreement(masterAgreementInstance)
 
-        redirect(action: "index")
+        redirect(action: "show", id: masterAgreementInstance.id)
     }
 
     def show(Long id){

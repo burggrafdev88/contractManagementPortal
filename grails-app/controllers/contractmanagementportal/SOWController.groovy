@@ -15,10 +15,12 @@ class SOWController {
     def save(){
         println 'I made it to save for SOW.'
         def sowInstance = new SOW(params)
+        def masterAgreementID = params.masterAgreement
+        println 'ID: ' + masterAgreementID
         println sowInstance.validate()
         SOWService.saveSOW(sowInstance)
 
-        redirect(controller: "MasterAgreement", action: "index")
+        redirect(controller: "MasterAgreement", action: "show", id: masterAgreementID)
     }
 
     def edit(){
