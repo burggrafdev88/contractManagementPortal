@@ -20,6 +20,8 @@
 
     <div class="container">
         <form method="POST" controller="SOW" action="../update">
+            <!--hidden field for sow id-->
+            <input name="id" value="${sow.id}" hidden>
 
             <div class="row">
                 <div class="col-15">
@@ -27,7 +29,7 @@
                 </div>
 
                 <div class="col-40">
-                    <input type="text" id="name" name="name" required readonly>
+                    <input type="text" id="name" name="name" class="readOnly" value="${sow.name}" required readonly>
                 </div>
 
                 <div class="editIcon">
@@ -41,7 +43,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="number" id="spendCap" name="spendCap" min="0" step="1"
+                    <input type="number" id="spendCap" name="spendCap" class="readOnly" min="0" step="1" value="${sow.spendCap}"
                            pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" title="Contract Spend Cap" required readonly>
                 </div>
 

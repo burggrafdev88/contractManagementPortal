@@ -47,13 +47,6 @@
                     <g:link controller="MasterAgreement" action="show"
                             params="[id: masterAgreement.id]">View</g:link>
                 </td>
-
-%{--                , office: masterAgreement.office.name, contractName: masterAgreement.name, bidTypeID: masterAgreement.bidType.name,--}%
-%{--                contractor: masterAgreement.contractor.name, startDate: masterAgreement.startDate,--}%
-%{--                endDate: masterAgreement.endDate, spendCap: masterAgreement.spendCap, pointOfContactFName: masterAgreement.pointOfContactFName,--}%
-%{--                pointOfContactLName: masterAgreement.pointOfContactLName, pointOfContactEmail: masterAgreement.pointOfContactEmail,--}%
-%{--                pointOfContactPhone: masterAgreement.pointOfContactPhone--}%
-
             </tr>
 
         </g:each>

@@ -65,65 +65,45 @@
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <!--first unordered item-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">
-                            Master Agreements
-                        </a>
+                        <g:link class="nav-link dropdown-toggle" controller="masterAgreement" action="index" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Master Agreements</g:link>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">District</a>
-                            <a class="dropdown-item" href="#">Kansas City</a>
-                            <a class="dropdown-item" href="#">Denver</a>
-                            <a class="dropdown-item" href="#">Oklahoma City</a>
-                            <a class="dropdown-item" href="#">Omaha</a>
-                            <a class="dropdown-item" href="#">View All</a>
+                            <g:link controller="masterAgreement" action="create" class="dropdown-item">Add</g:link>
+                            <g:link controller="masterAgreement" action="index" class="dropdown-item">View All</g:link>
                         </div>
                     </li>
 
                     <!--second unordered item-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">
-                            Contracts (RFPs)
-                        </a>
+                    <g:link class="nav-link dropdown-toggle" controller="masterAgreement" action="index" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Contracts (RFPs)</g:link>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">District</a>
-                            <a class="dropdown-item" href="#">Kansas City</a>
-                            <a class="dropdown-item" href="#">Denver</a>
-                            <a class="dropdown-item" href="#">Oklahoma City</a>
-                            <a class="dropdown-item" href="#">Omaha</a>
-                            <a class="dropdown-item" href="#">View All</a>
+%{--                            <g:link controller="" action="" class="dropdown-item">Add</g:link>--}%
+%{--                            <g:link controller="" action="" class="dropdown-item">View All</g:link>--}%
                         </div>
                     </li>
 
                     <!--third unordered item-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">
-                            Terms & Conditions
-                        </a>
+                        <g:link class="nav-link dropdown-toggle" controller="masterAgreement" action="index" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Terms & Conditions</g:link>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">District</a>
-                            <a class="dropdown-item" href="#">Kansas City</a>
-                            <a class="dropdown-item" href="#">Denver</a>
-                            <a class="dropdown-item" href="#">Oklahoma City</a>
-                            <a class="dropdown-item" href="#">Omaha</a>
-                            <a class="dropdown-item" href="#">View All</a>
+%{--                            <g:link controller="" action="" class="dropdown-item">Add</g:link>--}%
+%{--                            <g:link controller="" action="" class="dropdown-item">View All</g:link>--}%
                         </div>
                     </li>
 
                     <!--fourth unordered item-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">
-                            Contractors
-                        </a>
+                        <g:link class="nav-link dropdown-toggle" controller="masterAgreement" action="index" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Contractors</g:link>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="add">Add</a>
-                            <a class="dropdown-item" href="index">View All</a>
+                            <g:link controller="contractor" action="create" class="dropdown-item">Add</g:link>
+                            <g:link controller="contractor" action="index" class="dropdown-item">View All</g:link>
                         </div>
                     </li>
                 </ul>

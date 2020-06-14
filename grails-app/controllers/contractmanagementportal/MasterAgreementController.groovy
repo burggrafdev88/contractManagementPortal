@@ -43,8 +43,10 @@ class MasterAgreementController {
     def show(Long id){
         println 'I made it to show for Master Agreement.'
         def masterAgreementInstance = MasterAgreement.get(id)
+        def sowList = masterAgreementInstance.getSows()
+        println sowList
 
-        render(view: "show", model: [masterAgreement: masterAgreementInstance])
+        render(view: "show", model: [masterAgreement: masterAgreementInstance, sow: sowList])
     }
 
     def delete(Long id){

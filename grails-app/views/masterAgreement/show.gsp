@@ -102,7 +102,7 @@
 
                 <div class="grid-item">
                     <div class="label">Bid Type</div>
-                    <div class="data">${masterAgreement.bidType.id}</div>
+                    <div class="data">${masterAgreement.bidType.name}</div>
                 </div>
 
                 <div class="grid-item">
@@ -153,18 +153,21 @@
             <th class="centered">Expand</th>
         </tr>
 
-        <tr>
-            <td>1</td>
-            <td>Lorem Ipsom SOW Name</td>
-            <td>$xxx.xx</td>
-            <td>$xxx.xx</td>
-            <td>
-                <g:link controller="SOW" action="show">View</g:link>
-            </td>
-            <td class="centered">
-                <i class="fas fa-angle-left" id="expandArrow" onclick="expandInvoices();" title="Expand Invoices"></i>
-            </td>
-        </tr>
+        <g:each status="i" var="s" in="${sow}">
+            <tr>
+                <td>${i + 1}</td>
+                <td>${s.name}</td>
+                <td>Place holder data</td>
+                <td>${s.spendCap}</td>
+                <td>
+                    <g:link controller="SOW" action="show" params="[id: s.id]">View</g:link>
+                </td>
+                <td class="centered">
+                    <i class="fas fa-angle-left" id="expandArrow" onclick="expandInvoices();" title="Expand Invoices"></i>
+                </td>
+            </tr>
+        </g:each>
+
     </table>
 
 </div>

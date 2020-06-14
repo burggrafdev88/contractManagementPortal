@@ -9,6 +9,7 @@ class ContractorController {
     def index() {
         println 'I made it to index for Contractors'
         def contractorList = Contractor.list(sort: "name", order: "asc")
+        println contractorList
         render(view: "index", model: [c: contractorList])
     }
 

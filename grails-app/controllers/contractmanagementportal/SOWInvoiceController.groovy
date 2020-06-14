@@ -1,6 +1,7 @@
 package contractmanagementportal
 
 class SOWInvoiceController {
+    def SOWInvoiceService
 
     def index() {
         println 'I made it to index for SOWInvoice.'
@@ -12,23 +13,31 @@ class SOWInvoiceController {
 
     def save(){
         println 'I made it to save for SOWInvoice.'
-
         def sowInvoiceInstance = new SOWInvoice(params)
-        sowInvoiceInstance.save()
+        SOWInvoiceService.saveSOWInvoice(sowInvoiceInstance)
+        println 'next line...'
+        println sowInvoiceInstance.sow.id
 
-        render 'SOWInvoice saved.'
+        redirect(controller: "SOW", action: "show", id: sowInvoiceInstance.sow.id)
     }
 
-    def edit(){
+    def edit(Long id){
         println 'I made it to edit for SOWInvoice'
+        def sowInvoiceInstance = SOWInvoice.get(id)
+        println sowInvoiceInstance.invoiceNumber
+
+        render(view: "edit", model: [sowInvoice: sowInvoiceInstance])
     }
 
     def update(Long id){
         println("I made it to update for SOWInvoice")
-        def SOWInvoiceInstance = SOWInvoice.get(id)
-        SOWInvoiceInstance.properties = params
-        SOWInvoiceInstance.save()
-        redirect(action: "index")
+        def sowInvoiceInstance = SOWInvoice.get(id)
+        sowInvoiceInstance.properties = params
+        SOWInvoiceService.saveSOWInvoice(sowInvoiceInstance)
+
+        def sowID = sowInvoiceInstance.getSow().id
+
+        redirect(controller: "SOW", action: "show", id: sowID)
     }
 
     def show(){

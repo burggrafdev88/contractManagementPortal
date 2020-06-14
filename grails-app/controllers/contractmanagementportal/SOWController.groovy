@@ -16,15 +16,16 @@ class SOWController {
         println 'I made it to save for SOW.'
         def sowInstance = new SOW(params)
         def masterAgreementID = params.masterAgreement
-        println 'ID: ' + masterAgreementID
         println sowInstance.validate()
         SOWService.saveSOW(sowInstance)
 
         redirect(controller: "MasterAgreement", action: "show", id: masterAgreementID)
     }
 
-    def edit(){
+    def edit(Long id){
         println 'I made it to edit for SOW'
+        def sowInstance = SOW.get(id)
+        render(view: "edit", model: [sow: sowInstance])
     }
 
     def update(Long id){
@@ -33,10 +34,19 @@ class SOWController {
         sowInstance.properties = params
         SOWService.saveSOW(sowInstance)
 
-        render 'SOW saved.'
+        redirect(action: "show", id: sowInstance.id)
     }
 
-    def show(){
+    def show(Long id){
         println 'I made to to show for SOW.'
+        def sowInstance = SOW.get(id)
+        def invList = sowInstance.getSowInvoices()
+        println invList
+
+        render(view: "show", model: [sow: sowInstance, inv: invList])
+    }
+
+    def list(){
+        return sowList = SOW.list(sort: "name", order: "asc")
     }
 }

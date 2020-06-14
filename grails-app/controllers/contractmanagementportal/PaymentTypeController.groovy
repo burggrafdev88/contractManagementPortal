@@ -6,4 +6,9 @@ class PaymentTypeController {
 
     }
 
+    def list(){
+        def list = PaymentType.list()
+        return list
+    }
+
 }

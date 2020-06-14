@@ -21,7 +21,7 @@
     <div class="container">
 
         <form method="POST" action="../update">
-            <!--hidden field for contractor id-->
+            <!--hidden field for master agreement id-->
             <input name="id" value="${masterAgreement.id}" hidden>
 
             <div class="row">

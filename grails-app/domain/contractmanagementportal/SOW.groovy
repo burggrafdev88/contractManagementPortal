@@ -9,5 +9,6 @@ class SOW {
     static belongsTo = [masterAgreement: MasterAgreement]  //will cascade on Contractor and/or MasterAgreement delete
 
     static constraints = {
+
     }
 }

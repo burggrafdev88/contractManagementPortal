@@ -44,7 +44,7 @@
             </div>
 
             <!--Line below was copied and pasted over from another view. May need something similar once I begin working on controller code-->
-            <input type="hidden" id="master_agreement_id" name="master_agreement_id" value="1">
+            <input type="hidden" id="sow" name="sow" value="${params.sowID}">
 
             <div class="row">
                 <input type="submit" value="Submit">
