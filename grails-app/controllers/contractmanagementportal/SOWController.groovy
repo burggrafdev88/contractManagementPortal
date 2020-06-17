@@ -38,7 +38,7 @@ class SOWController {
     }
 
     def show(Long id){
-        println 'I made to to show for SOW.'
+        println 'I made it to show for SOW.'
         def sowInstance = SOW.get(id)
         def invList = sowInstance.getSowInvoices()
         println invList
@@ -48,5 +48,14 @@ class SOWController {
 
     def list(){
         return sowList = SOW.list(sort: "name", order: "asc")
+    }
+
+    def delete(Long id){
+        println 'I made it to delete for SOW'
+        def sowInstance = SOW.get(id)
+        def masterAgreementID = sowInstance.getMasterAgreement().id
+        SOWService.deleteSOW(sowInstance)
+
+        redirect(controller: "masterAgreement", action: "show", id: masterAgreementID)
     }
 }

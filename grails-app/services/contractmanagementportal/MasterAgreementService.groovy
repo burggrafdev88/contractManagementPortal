@@ -22,7 +22,7 @@ class MasterAgreementService {
 
     @Transactional
     def deleteMasterAgreement(MasterAgreement masterAgreementInstance){
-        print 'I made it the deleteMasterAgreement service.'
+        println 'I made it the deleteMasterAgreement service.'
 
         /*What does .delete return? Logic here seems backwards so I inserted a ! */
         if(masterAgreementInstance.delete(flush: true)){

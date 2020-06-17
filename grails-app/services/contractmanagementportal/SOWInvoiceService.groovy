@@ -19,4 +19,17 @@ class SOWInvoiceService {
             println 'sowInvoice not saved'
         }
     }
+
+    @Transactional
+    def deleteSOWInvoice(SOWInvoice sowInvoiceInstance){
+        println 'I made it to the deleteSOWInvoice service'
+
+        /*What does .delete return? Logic here seems backwards so I inserted a ! */
+        if(!sowInvoiceInstance.delete(flush: true)){
+            println 'sowInvoiceInstance deleted'
+        } else{
+            println 'sowInvoiceInstance not deleted'
+        }
+    }
+
 }

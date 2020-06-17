@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="number" id="spendCap" name="spendCap" class="readOnly" min="0" step="1" value="${sow.spendCap}"
+                    <input type="number" id="spendCap" name="spendCap" class="readOnly" min="0" step=".01" value="${sow.spendCap}"
                            pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" title="Contract Spend Cap" required readonly>
                 </div>
 

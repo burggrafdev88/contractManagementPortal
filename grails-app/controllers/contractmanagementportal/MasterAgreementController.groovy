@@ -54,7 +54,8 @@ class MasterAgreementController {
         def masterAgreementInstance = MasterAgreement.get(id)
         masterAgreementService.deleteMasterAgreement(masterAgreementInstance)
 
-        redirect(action: "index")
+        render(action: "index")
+//        redirect(action: "index")
     }
 
 }

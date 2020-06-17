@@ -43,4 +43,13 @@ class SOWInvoiceController {
     def show(){
         println 'I made it to show for SOWInvoice'
     }
+
+    def delete(Long id){
+        println 'I made it to delete for sowInvoice.'
+        def sowInvoiceInstance = SOWInvoice.get(id)
+        def sowID = sowInvoiceInstance.getSow().id
+        SOWInvoiceService.deleteSOWInvoice(sowInvoiceInstance)
+
+        redirect(controller: "SOW", action: "show", id: sowID)
+    }
 }

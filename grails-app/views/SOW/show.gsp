@@ -44,15 +44,15 @@
         <div class="closedContainers" id="closedContainers">
             <div class="grid-container">
                 <div class="grid-item">
-                    <g:link class="label" controller="SOW" action="edit" params="[id: sow.id]">Edit</g:link>
-                </div>
-
-                <div class="grid-item">
                     <g:link class="label" controller="SOWInvoice" action="create" params="[sowID: sow.id]">Add Invoice</g:link>
                 </div>
 
                 <div class="grid-item">
+                    <g:link class="label" controller="SOW" action="edit" params="[id: sow.id]">Edit</g:link>
+                </div>
 
+                <div class="grid-item">
+                    <g:link class="label" controller="SOW" action="delete" params="[id: sow.id]">delete2</g:link>
                 </div>
 
                 <div class="grid-item">
@@ -70,7 +70,7 @@
             <th>Invoice Total</th>
             <th>SOW Amount</th>
             <th>Edit</th>
-            <th class="centered">Expand</th>
+            <th>Delete</th>
         </tr>
 
         <g:each status="j" var="i" in="${inv}">
@@ -82,9 +82,10 @@
                 <td>
                     <g:link controller="SOWInvoice" action="edit" params="[id: i.id]">Edit</g:link>
                 </td>
-                <td class="centered">
-                    <i class="fas fa-angle-left" id="expandArrow" onclick="expandInvoices();" title="Expand Invoices"></i>
+                <td>
+                    <g:link controller="SOWInvoice" action="delete" params="[id: i.id]">Delete</g:link>
                 </td>
+
             </tr>
         </g:each>
 
