@@ -47,7 +47,8 @@ class SOWController {
     }
 
     def list(){
-        return sowList = SOW.list(sort: "name", order: "asc")
+        def sowList = SOW.list(sort: "name", order: "asc")
+        return sowList
     }
 
     def delete(Long id){
@@ -57,5 +58,11 @@ class SOWController {
         SOWService.deleteSOW(sowInstance)
 
         redirect(controller: "masterAgreement", action: "show", id: masterAgreementID)
+    }
+
+    def invoiceList(Long id){
+        println 'I made it to invoiceList for SOW'
+        def sowInstance = SOW.get(id)
+        return sowInstance.getSowInvoices()
     }
 }

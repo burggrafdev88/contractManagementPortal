@@ -250,6 +250,11 @@ input[type=submit] {
     padding: 8px;
 }
 
+.infoTable.fullWidth .invoiceRows{
+    text-align: right;
+    visibility: collapse;
+}
+
 .infoTable tr:nth-child(even){
     background-color: #f2f2f2;
 }

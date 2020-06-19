@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="grid-item">
-                    <g:link class="label" controller="SOW" action="delete" params="[id: sow.id]">delete2</g:link>
+                    <g:link class="label" controller="SOW" action="delete" params="[id: sow.id]">Delete</g:link>
                 </div>
 
                 <div class="grid-item">

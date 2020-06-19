@@ -163,9 +163,23 @@
                     <g:link controller="SOW" action="show" params="[id: s.id]">View</g:link>
                 </td>
                 <td class="centered">
-                    <i class="fas fa-angle-left" id="expandArrow" onclick="expandInvoices();" title="Expand Invoices"></i>
+                    <i class="fas fa-angle-left" id="expandArrow${i}" onclick="expandInvoices(${i}, ${s.getSowInvoices().size()});" title="Expand Invoices"></i>
                 </td>
             </tr>
+
+            <g:each status="j" var="inv" in="${s.getSowInvoices()}">
+
+                <tr id="invoiceRows${i}${j}" class="invoiceRows">
+                    <td>INV ${j + 1}</td>
+                    <td>INV #: ${inv.invoiceNumber}</td>
+                    <td>$${inv.amount}</td>
+                    <td></td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+
+            </g:each>
+
         </g:each>
 
     </table>
@@ -174,6 +188,9 @@
 
 <script>
     let expanded = false;
+    // let elem = document.getElementById('invoiceRows0');
+    // let visibility = window.getComputedStyle(elem, null).getPropertyValue("visibility");
+    // console.log(visibility)
 
     // Hide all elements with class="containerTab", except for the one that matches the clickable grid column
     function openTab() {
@@ -186,30 +203,68 @@
         $( "#expand" ).css("display", "block")
     }
 
-    function expandInvoices(){
+    //function to expand and collapse invoice rows under each SOW.
+    function expandInvoices(i, sowInvoices){
         if(!expanded){
             console.log('Expand invoices function called to open.')
 
-            $('#expandArrow').css({'transform': 'rotate(-90deg)'});
+            /*initialize expandArrow variable and rotate element*/
+            let expandArrow = '#expandArrow' + i;
+            $(expandArrow).css({'transform': 'rotate(-90deg)'});
 
-            // let expandArrow = $('#expandArrow');
-            // expandArrow.animate({
-            //     '-webkit-transform': 'rotate(' + -90 + 'deg)',
-            //     '-moz-transform': 'rotate(' + -90 + 'deg)',
-            //     '-ms-transform': 'rotate(' + -90 + 'deg)',
-            //     '-o-transform': 'rotate(' + -90 + 'deg)',
-            //     'transform': 'rotate(' + -90 + 'deg)',
-            // }, 2000);
+            /*declare increment variable and variable to be used in jQuery in order to collapse / show invoices*/
+            let j;
+            let invoiceRows = '#invoiceRows' + i;
+            console.log('sowInvoices: ' + sowInvoices);
+
+            /*loop through sowInvoices variable, make invoices visible*/
+            for(j = 0; j < sowInvoices; j++){
+                invoiceRows += j;
+                console.log('variable' + invoiceRows);
+
+                $( invoiceRows ).css("visibility", "visible");
+                // let elem = document.getElementById('invoiceRows0');
+                // let visibility = window.getComputedStyle(elem, null).getPropertyValue("visibility");
+                //
+                // console.log(visibility);
+
+                /*remove last character from end of invoiceRows variable*/
+                invoiceRows = invoiceRows.substr(0, invoiceRows.length - 1);
+                console.log('variable substring' + invoiceRows);
+            }
+
             expanded = true;
 
         } else{
             console.log('Expand invoices function called to close.')
 
-            $('#expandArrow').css({'transform': 'rotate(0)'});
+            /*initialize expandArrow variable and rotate element*/
+            let expandArrow = '#expandArrow' + i;
+            $(expandArrow).css({'transform': 'rotate(0deg)'});
+
+            /*declare increment variable and variable to be used in jQuery in order to collapse / show invoices*/
+            let j;
+            let invoiceRows = '#invoiceRows' + i;
+            console.log('sowInvoices: ' + sowInvoices);
+
+            /*loop through sowInvoices variable, make invoices visible*/
+            for(j = 0; j < sowInvoices; j++){
+                invoiceRows += j;
+                console.log('variable' + invoiceRows);
+
+                $( invoiceRows ).css("visibility", "collapse");
+                // let elem = document.getElementById('invoiceRows0');
+                // let visibility = window.getComputedStyle(elem, null).getPropertyValue("visibility");
+                //
+                // console.log(visibility);
+
+                /*remove last character from end of invoiceRows variable*/
+                invoiceRows = invoiceRows.substr(0, invoiceRows.length - 1);
+                console.log('variable substring' + invoiceRows);
+            }
+
             expanded = false;
-
         }
-
 
     }
 
