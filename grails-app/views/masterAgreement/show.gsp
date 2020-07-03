@@ -64,7 +64,7 @@
 
                 <div class="grid-item">
                     <div class="label">Spend to Date $</div>
-                    <div class="data">$79,000</div>
+                    <div class="data">PLACEHOLDER</div>
                 </div>
 
                 <div class="grid-item">
@@ -157,8 +157,8 @@
             <tr>
                 <td>${i + 1}</td>
                 <td>${s.name}</td>
-                <td>Place holder data</td>
-                <td>${s.spendCap}</td>
+                <td>$${s.sowInvoices.amount.sum()}</td>
+                <td>$${s.spendCap}</td>
                 <td>
                     <g:link controller="SOW" action="show" params="[id: s.id]">View</g:link>
                 </td>

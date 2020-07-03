@@ -8,7 +8,7 @@ class BootStrap {
 
         new BidType(name: "Competitive - Formal - RFP").save()
         new BidType(name: "Competitive - Informal").save()
-        new BidType(name: "No Bid").save()
+//        new BidType(name: "No Bid").save()
         new BidType(name: "Sole Source").save()
         new BidType(name: "Exception to Bid").save()
 

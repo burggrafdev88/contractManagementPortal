@@ -27,7 +27,7 @@
 
             <div class="grid-item">
                 <div class="label">Total Spend:</div>
-                <div class="data">Placeholder #</div>
+                <div class="data">$${sow.sowInvoices.amount.sum()}</div>
             </div>
 
             <div class="grid-item">
@@ -68,7 +68,6 @@
             <th>#</th>
             <th>Invoice #</th>
             <th>Invoice Total</th>
-            <th>SOW Amount</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -77,15 +76,13 @@
             <tr>
                 <td>${j + 1}</td>
                 <td>${i.invoiceNumber}</td>
-                <td>Place holder data</td>
-                <td>${i.amount}</td>
+                <td>$${i.amount}</td>
                 <td>
                     <g:link controller="SOWInvoice" action="edit" params="[id: i.id]">Edit</g:link>
                 </td>
                 <td>
                     <g:link controller="SOWInvoice" action="delete" params="[id: i.id]">Delete</g:link>
                 </td>
-
             </tr>
         </g:each>
 

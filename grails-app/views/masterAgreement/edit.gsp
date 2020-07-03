@@ -30,10 +30,10 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <select id="office" class="readOnly" name="office" required disabled>
-                        <option value="1">District</option>
-                        <option value="2">Kansas City</option>
-                        <option value="3">Denver</option>
+                    <select id="office" name="office" disabled>
+                        <g:each in="${officeList}" var="office">
+                            <option value="${office.id}">${office.name}</option>
+                        </g:each>
                     </select>
                 </div>
 
@@ -146,8 +146,9 @@
 
                 <div class="col-45">
                     <select id="bidType" name="bidType" disabled>
-                        <option value="1">Competitive - Formal</option>
-                        <option value="2">Competitive - Informal</option>
+                        <g:each in="${bidTypeList}" var="bidType">
+                            <option value="${bidType.id}">${bidType.name}</option>
+                        </g:each>
                     </select>
                 </div>
             </div>

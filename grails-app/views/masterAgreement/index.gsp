@@ -52,8 +52,6 @@
         </g:each>
     </table>
 
-
-
 </div>
 
 </body>

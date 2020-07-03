@@ -15,6 +15,10 @@ class ContractorController {
 
     def create(){
         println 'I made it to create for Contractors.'
+        def paymentTypeList = PaymentType.getAll()
+        println paymentTypeList
+
+        render(view: "create", model: [p: paymentTypeList])
     }
 
     def save(){

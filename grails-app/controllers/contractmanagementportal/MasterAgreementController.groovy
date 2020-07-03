@@ -14,6 +14,11 @@ class MasterAgreementController {
 
     def create(){
         println 'I made it to create for Master Agreements.'
+        def contractorList = Contractor.getAll()
+        def officeList = Office.getAll()
+        def bidTypeList = BidType.getAll()
+
+        render(view: "create", model: [contractorList: contractorList, officeList: officeList, bidTypeList: bidTypeList])
     }
 
     def save(){
@@ -27,8 +32,11 @@ class MasterAgreementController {
     def edit(Long id){
         println 'I made it to edit for Master Agreements'
         def masterAgreementInstance = MasterAgreement.get(id)
+        def contractorList = Contractor.getAll()
+        def officeList = Office.getAll()
+        def bidTypeList = BidType.getAll()
 
-        render(view: "edit", model: [masterAgreement: masterAgreementInstance])
+        render(view: "edit", model: [masterAgreement: masterAgreementInstance, contractorList: contractorList, officeList: officeList, bidTypeList: bidTypeList])
     }
 
     def update(Long id){

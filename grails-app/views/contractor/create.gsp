@@ -132,8 +132,9 @@
 
                 <div>
                     <select id="paymentType" name="paymentType">
-                        <option value="1">ACH</option>
-                        <option value="2">Credit Card</option>
+                        <g:each in="${p}" var="paymentType">
+                            <option value="${paymentType.id}">${paymentType.name}</option>
+                        </g:each>
                     </select>
                 </div>
             </div>
@@ -144,44 +145,6 @@
         </form>
 
     </div>
-
-    <!--old form is below...has fields I will probably need to add into my new form later on-->
-    <!--
-
-        <div class="formFieldCOIAndDate">
-            <div class="formFieldCOI">
-                <label for="coiID">COI:</label>
-                <input type="file" id="coiID" name="coi" accept="application/pdf">
-                <div class="help-tip">
-                    <p>Please attach a PDF copy of the Contractor's Certificate of Insurance (COI).</p>
-                </div>
-            </div>
-
-            <div class="formFieldExpDate">
-                <label for="datepicker" class="dateLabel">Exp Date:</label>
-                <input id="datepicker" type="date" name="expiration_date">
-                <div class="help-tip">
-                    <p>Please enter the expiration date of the Contractor's Certificate of Insurance (COI).</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="formField">
-            <label for="paymentID">Payment Type:</label>
-            <select id="paymentID" name="paymentType">
-                <option value="1">ACH</option>
-                <option value="2">Credit Card</option>
-            </select>
-        </div>
-
-        <div class="formField">
-            <label for="paymentID">Payment Type:</label>
-            g:select id="paymentID" name="name" from="" optionKey="id" optionValue="name" noSelection="Please Select..">
-            /g:select>
-        </div>
-
-    </form>  -->
 
 </div>   <!--end body container-->
 

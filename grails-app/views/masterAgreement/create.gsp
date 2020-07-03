@@ -29,10 +29,10 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <select id="office" name="office" required>
-                        <option value="1">District</option>
-                        <option value="2">Kansas City</option>
-                        <option value="3">Denver</option>
+                    <select id="office" name="office">
+                        <g:each in="${officeList}" var="office">
+                            <option value="${office.id}">${office.name}</option>
+                        </g:each>
                     </select>
                 </div>
 
@@ -54,9 +54,11 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <select id="contractor" name="contractor" required>
-                        <option value="1">Test Contractor 1</option>
-                        <option value="2">Test Contractor 2</option>
+
+                    <select id="contractor" name="contractor">
+                        <g:each in="${contractorList}" var="contractor">
+                            <option value="${contractor.id}">${contractor.name}</option>
+                        </g:each>
                     </select>
                 </div>
             </div>
@@ -142,9 +144,10 @@
                 </div>
 
                 <div class="col-45">
-                    <select id="bidType" name="bidType" required>
-                        <option value="1">Competitive - Formal</option>
-                        <option value="2">Competitive - Informal</option>
+                    <select id="bidType" name="bidType">
+                        <g:each in="${bidTypeList}" var="bidType">
+                            <option value="${bidType.id}">${bidType.name}</option>
+                        </g:each>
                     </select>
                 </div>
             </div>
