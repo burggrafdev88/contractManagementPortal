@@ -52,4 +52,14 @@ class SOWInvoiceController {
 
         redirect(controller: "SOW", action: "show", id: sowID)
     }
+
+    def deleteFromMasterAgreementShowView(Long id, Long masterAgreementID){
+        println 'I made it to delete for sowInvoice.'
+        def sowInvoiceInstance = SOWInvoice.get(id)
+        def idForMasterAgreement = masterAgreementID
+        println 'Master Agreement ID' + idForMasterAgreement
+        SOWInvoiceService.deleteSOWInvoice(sowInvoiceInstance)
+
+        redirect(controller: "MasterAgreement", action: "show", id: idForMasterAgreement)
+    }
 }

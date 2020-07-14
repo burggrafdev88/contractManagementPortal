@@ -49,8 +49,8 @@
 
             </div>
 
-            <!--not sure if line below is needed, copied it over from create view-->
-            <input type="hidden" id="master_agreement_id" name="master_agreement_id" value="1">
+%{--            <!--not sure if line below is needed, copied it over from create view-->--}%
+%{--            <input type="hidden" id="master_agreement_id" name="master_agreement_id" value="1">--}%
 
             <div class="row">
                 <input type="submit" value="Update">

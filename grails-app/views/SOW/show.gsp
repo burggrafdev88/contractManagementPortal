@@ -27,12 +27,12 @@
 
             <div class="grid-item">
                 <div class="label">Total Spend:</div>
-                <div class="data">$${sow.sowInvoices.amount.sum()}</div>
+                <div class="data currency">$${sow.sowInvoices.amount.sum()}</div>
             </div>
 
             <div class="grid-item">
                 <div class="label">SOW Amount:</div>
-                <div class="data">$${sow.spendCap}</div>
+                <div class="data currency">$${sow.spendCap}</div>
             </div>
 
             <div class="grid-item">
@@ -48,11 +48,27 @@
                 </div>
 
                 <div class="grid-item">
-                    <g:link class="label" controller="SOW" action="edit" params="[id: sow.id]">Edit</g:link>
+                    <g:link class="label" controller="SOW" action="edit" params="[id: sow.id, masterAgreementID: masterAgreementID]">Edit</g:link>
                 </div>
 
                 <div class="grid-item">
                     <g:link class="label" controller="SOW" action="delete" params="[id: sow.id]">Delete</g:link>
+                </div>
+
+                <div class="grid-item">
+                    <g:link class="label" controller="masterAgreement" action="show" params="[id: masterAgreementID]">Back to Master Agreement</g:link>
+                </div>
+
+                <div class="grid-item">
+
+                </div>
+
+                <div class="grid-item">
+
+                </div>
+
+                <div class="grid-item">
+
                 </div>
 
                 <div class="grid-item">
@@ -76,7 +92,7 @@
             <tr>
                 <td>${j + 1}</td>
                 <td>${i.invoiceNumber}</td>
-                <td>$${i.amount}</td>
+                <td class="currency">$${i.amount}</td>
                 <td>
                     <g:link controller="SOWInvoice" action="edit" params="[id: i.id]">Edit</g:link>
                 </td>
@@ -131,6 +147,24 @@
 
 
     }
+
+    /*Once DOM is fully loaded, run script to format table cells with currencies*/
+    window.addEventListener('DOMContentLoaded', (event) => {
+        console.log("Function to format currencies called.");
+
+        let currencyElements = document.getElementsByClassName("currency");
+
+        for(let i = 0; i < currencyElements.length; i++){
+            let value = currencyElements[i].innerHTML;
+
+            /*numeral function is part of the numeral.js package*/
+            value = numeral(value).format('$0,0.00');
+            currencyElements[i].innerHTML = value;
+        }
+
+    });
+
+
 
 </script>
 

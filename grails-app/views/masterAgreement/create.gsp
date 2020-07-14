@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="tel" id="pointOfContactPhone" name="pointOfContactPhone" title="Point of Contact Phone Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXXXXXXXX" required>
+                    <input type="text" id="pointOfContactPhone" name="pointOfContactPhone" title="Point of Contact Phone Number" pattern="[0-9]+([-\,][0-9]+)?" placeholder="XXX-XXX-XXXX" required>
                 </div>
 
             </div>

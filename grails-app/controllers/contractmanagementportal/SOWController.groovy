@@ -22,28 +22,30 @@ class SOWController {
         redirect(controller: "MasterAgreement", action: "show", id: masterAgreementID)
     }
 
-    def edit(Long id){
+    def edit(Long id, Long masterAgreementID){
         println 'I made it to edit for SOW'
         def sowInstance = SOW.get(id)
-        render(view: "edit", model: [sow: sowInstance])
+        def idForMasterAgreement = masterAgreementID
+        render(view: "edit", model: [sow: sowInstance, masterAgreementID: idForMasterAgreement])
     }
 
-    def update(Long id){
+    def update(Long id, Long masterAgreementID){
         println("I made it to update for SOW")
         def sowInstance = SOW.get(id)
+        def idForMasterAgreement = masterAgreementID
         sowInstance.properties = params
         SOWService.saveSOW(sowInstance)
-
-        redirect(action: "show", id: sowInstance.id)
+        redirect(action: "show", id: sowInstance.id, masterAgreementID: idForMasterAgreement)
     }
 
     def show(Long id){
         println 'I made it to show for SOW.'
         def sowInstance = SOW.get(id)
         def invList = sowInstance.getSowInvoices()
+        def idForMasterAgreement = sowInstance.getMasterAgreement().id
         println invList
 
-        render(view: "show", model: [sow: sowInstance, inv: invList])
+        render(view: "show", model: [sow: sowInstance, inv: invList, masterAgreementID: idForMasterAgreement])
     }
 
     def list(){

@@ -46,12 +46,12 @@
             <div class="grid-container">
                 <div class="grid-item">
                     <div class="label">Contract Start Date:</div>
-                    <div class="data">${masterAgreement.startDate}</div>
+                    <div class="data date">${masterAgreement.startDate}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">Contract End Date:</div>
-                    <div class="data">${masterAgreement.endDate}</div>
+                    <div class="data date">${masterAgreement.endDate}</div>
                 </div>
 
                 <div class="grid-item">
@@ -68,8 +68,8 @@
                 </div>
 
                 <div class="grid-item">
-                    <div class="label">Contract Amount $</div>
-                    <div class="data">${masterAgreement.spendCap}</div>
+                    <div class="label">Contract Amount:</div>
+                    <div class="data currency">${masterAgreement.spendCap}</div>
                 </div>
 
                 <div class="grid-item">
@@ -137,13 +137,14 @@
                 <div class="grid-item">
                     <span class="label hide right" onclick="closeTab();">Close</span>
                 </div>
+
             </div>
 
         </div>
 
     </div>
 
-    <table class="infoTable fullWidth">
+    <table class="infoTable fullWidth" id="invoiceInfo">
         <tr>
             <th>#</th>
             <th>SOW Name</th>
@@ -154,13 +155,13 @@
         </tr>
 
         <g:each status="i" var="s" in="${sow}">
-            <tr>
+            <tr class="sowRow">
                 <td>${i + 1}</td>
                 <td>${s.name}</td>
-                <td>$${s.sowInvoices.amount.sum()}</td>
-                <td>$${s.spendCap}</td>
+                <td id="invoiceAmount${i + 1}" class="currency">${s.sowInvoices.amount.sum()}</td>
+                <td class="currency">$${s.spendCap}</td>
                 <td>
-                    <g:link controller="SOW" action="show" params="[id: s.id]">View</g:link>
+                    <g:link controller="SOW" action="show" params="[id: s.id, masterAgreementID: masterAgreement.id]">View</g:link>
                 </td>
                 <td class="centered">
                     <i class="fas fa-angle-left" id="expandArrow${i}" onclick="expandInvoices(${i}, ${s.getSowInvoices().size()});" title="Expand Invoices"></i>
@@ -172,10 +173,14 @@
                 <tr id="invoiceRows${i}${j}" class="invoiceRows">
                     <td>INV ${j + 1}</td>
                     <td>INV #: ${inv.invoiceNumber}</td>
-                    <td>$${inv.amount}</td>
+                    <td class="currency">$${inv.amount}</td>
                     <td></td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    <td>
+                        <g:link controller="SOWInvoice" action="edit" params="[id: inv.id]">Edit</g:link>
+                    </td>
+                    <td>
+                        <g:link controller="SOWInvoice" action="deleteFromMasterAgreementShowView" params="[id: inv.id, masterAgreementID: masterAgreement.id]">Delete</g:link>
+                    </td>
                 </tr>
 
             </g:each>
@@ -188,9 +193,6 @@
 
 <script>
     let expanded = false;
-    // let elem = document.getElementById('invoiceRows0');
-    // let visibility = window.getComputedStyle(elem, null).getPropertyValue("visibility");
-    // console.log(visibility)
 
     // Hide all elements with class="containerTab", except for the one that matches the clickable grid column
     function openTab() {
@@ -223,10 +225,6 @@
                 console.log('variable' + invoiceRows);
 
                 $( invoiceRows ).css("visibility", "visible");
-                // let elem = document.getElementById('invoiceRows0');
-                // let visibility = window.getComputedStyle(elem, null).getPropertyValue("visibility");
-                //
-                // console.log(visibility);
 
                 /*remove last character from end of invoiceRows variable*/
                 invoiceRows = invoiceRows.substr(0, invoiceRows.length - 1);
@@ -253,10 +251,6 @@
                 console.log('variable' + invoiceRows);
 
                 $( invoiceRows ).css("visibility", "collapse");
-                // let elem = document.getElementById('invoiceRows0');
-                // let visibility = window.getComputedStyle(elem, null).getPropertyValue("visibility");
-                //
-                // console.log(visibility);
 
                 /*remove last character from end of invoiceRows variable*/
                 invoiceRows = invoiceRows.substr(0, invoiceRows.length - 1);
@@ -268,6 +262,55 @@
 
     }
 
+    /*Once DOM is fully loaded, run script to format table cells with currencies*/
+    window.addEventListener('DOMContentLoaded', (event) => {
+        console.log("Function to format currencies called.");
+
+        let currencyElements = document.getElementsByClassName("currency");
+
+        for(let i = 0; i < currencyElements.length; i++){
+            let value = currencyElements[i].innerHTML;
+
+            /*numeral function is part of the numeral.js package*/
+            value = numeral(value).format('$0,0.00');
+            currencyElements[i].innerHTML = value;
+        }
+
+        // let table = document.getElementById("invoiceInfo");
+        // console.log(table);
+        // console.log(table.rows.length);
+        //
+        // for(let i = 1, row; row = table.rows[i]; i++){
+        //     let invoiceAmountTD = 'invoiceAmount' + i;
+        //
+        //     if(table.rows[i].className == "sowRow"){
+        //         console.log("Class name = sowRow = True");
+        //         let invoiceTotal = document.getElementById(invoiceAmountTD).innerHTML;
+        //
+        //         /*numeral function is part of the numeral.js package*/
+        //         invoiceTotal = numeral(invoiceTotal).format('$0,0.00');
+        //         document.getElementById(invoiceAmountTD).innerHTML = invoiceTotal;
+        //     } else{
+        //         console.log("No");
+        //     }
+        // }
+    });
+
+    /*Once DOM is fully loaded, run script to format table cells with dates*/
+    window.addEventListener('DOMContentLoaded', (event) => {
+        console.log("Function to format currencies called.");
+
+        let dateElements = document.getElementsByClassName("date");
+
+        for(let i = 0; i < dateElements.length; i++){
+            let date = dateElements[i].innerHTML;
+
+            /*moment function is part of the moment.js package*/
+            date = moment(date).format('M/D/YYYY');
+            dateElements[i].innerHTML = date;
+        }
+
+    });
 
 </script>
 
