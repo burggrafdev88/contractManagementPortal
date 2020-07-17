@@ -1,28 +1,29 @@
 <%--
   Created by IntelliJ IDEA.
   User: pburg
-  Date: 5/13/2020
-  Time: 3:56 PM
+  Date: 7/16/2020
+  Time: 8:34 PM
 --%>
+
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Edit Master Agreement</title>
+    <title>Edit Terms and Conditions</title>
     <meta name="layout" content="mainCMP"/>
 </head>
 
 <body>
 <div class="bodyContainer">
-    <h1>Edit Master Agreement</h1>
-    <p>Edit Master Agreement information below.</p>
+    <h1>Edit Terms and Conditions</h1>
+    <p>Edit Terms and Conditions information below.</p>
     <hr>
 
     <div class="container">
 
         <form method="POST" action="../update">
-            <!--hidden field for master agreement id-->
-            <input name="id" value="${masterAgreement.id}" hidden>
+            <!--hidden field for t&c id-->
+            <input name="id" value="${termsAndConditions.id}" hidden>
 
             <div class="row">
                 <div class="col-15">
@@ -38,7 +39,7 @@
                 </div>
 
                 <div class="editIcon">
-                    <i id="editIcon" class="far fa-edit" title="Edit Master Agreement"></i>
+                    <i id="editIcon" class="far fa-edit" title="Edit Terms and Conditions"></i>
                 </div>
 
             </div>
@@ -49,7 +50,7 @@
                 </div>
 
                 <div class="col-40">
-                    <input type="text" id="name" class="readOnly" name="name" value="${masterAgreement.name}" required readonly>
+                    <input type="text" id="name" class="readOnly" name="name" value="${termsAndConditions.name}" required readonly>
                 </div>
             </div>
 
@@ -73,7 +74,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="pointOfContactFName" class="readOnly" name="pointOfContactFName" title="Point of Contact First Name" value="${masterAgreement.pointOfContactFName}" required readonly>
+                    <input type="text" id="pointOfContactFName" class="readOnly" name="pointOfContactFName" title="Point of Contact First Name" value="${termsAndConditions.pointOfContactFName}" required readonly>
                 </div>
 
                 <div class="col-15 rightAlignText">
@@ -81,7 +82,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="pointOfContactLName" class="readOnly" name="pointOfContactLName" title="Point of Contact Last Name" value="${masterAgreement.pointOfContactLName}" required readonly>
+                    <input type="text" id="pointOfContactLName" class="readOnly" name="pointOfContactLName" title="Point of Contact Last Name" value="${termsAndConditions.pointOfContactLName}" required readonly>
                 </div>
             </div>
 
@@ -91,7 +92,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="tel" id="pointOfContactPhone" class="readOnly" name="pointOfContactPhone" title="Point of Contact Phone Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXXXXXXXX" value="${masterAgreement.pointOfContactPhone}" required readonly>
+                    <input type="tel" id="pointOfContactPhone" class="readOnly" name="pointOfContactPhone" title="Point of Contact Phone Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXXXXXXXX" value="${termsAndConditions.pointOfContactPhone}" required readonly>
                 </div>
 
             </div>
@@ -102,7 +103,7 @@
                 </div>
 
                 <div class="col-45 removeLeftPadding">
-                    <input type="text" id="pointOfContactEmail" class="readOnly" name="pointOfContactEmail" title="Point of Contact Email" value="${masterAgreement.pointOfContactEmail}" required readonly>
+                    <input type="text" id="pointOfContactEmail" class="readOnly" name="pointOfContactEmail" title="Point of Contact Email" value="${termsAndConditions.pointOfContactEmail}" required readonly>
                 </div>
             </div>
 
@@ -112,7 +113,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="startDate" name="startDate" class="datepickerStartDate readOnly" data-date-format="yyyy-mm-dd" value="${masterAgreement.startDate}" required disabled>
+                    <input type="text" id="startDate" name="startDate" class="datepickerStartDate readOnly" data-date-format="yyyy-mm-dd" value="${termsAndConditions.startDate}" required disabled>
                 </div>
 
                 <div class="col-15 rightAlignText">
@@ -120,7 +121,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <input type="text" id="endDate" name="endDate" class="datepickerEndDate readOnly" data-date-format="yyyy-mm-dd" value="${masterAgreement.endDate}" required disabled>
+                    <input type="text" id="endDate" name="endDate" class="datepickerEndDate readOnly" data-date-format="yyyy-mm-dd" value="${termsAndConditions.endDate}" required disabled>
                 </div>
             </div>
 
@@ -131,11 +132,7 @@
 
                 <div class="col-15 removeLeftPadding">
                     <input type="number" id="spendCap" class="readOnly" name="spendCap" min="0" step="1"
-                           pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" title="Contract Spend Cap" value="${masterAgreement.spendCap}"required readonly>
-                </div>
-
-                <div class="help-tip">
-                    <p>If the Master Agreement does not have a committed spend, enter zero.</p>
+                           pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" title="Contract Spend Cap" value="${termsAndConditions.spendCap}"required readonly>
                 </div>
 
             </div>
@@ -155,7 +152,7 @@
             </div>
 
             <!--Will need to update later-->
-            <input type="hidden" id="masterAgreementStatus" name="masterAgreementStatus" value="1">
+            <input type="hidden" id="termsAndConditionsStatus" name="termsAndConditionsStatus" value="1">
 
             <div class="row">
                 <input type="submit" value="Update">
@@ -187,16 +184,16 @@
 
     /*Set initial select value for drop downs*/
     $( document ).ready(function() {
-        $('#office').val("${masterAgreement.office.id}");
-        $('#bidType').val("${masterAgreement.bidType.id}");
-        $('#contractor').val("${masterAgreement.contractor.id}");
+        $('#office').val("${termsAndConditions.office.id}");
+        $('#bidType').val("${termsAndConditions.bidType.id}");
+        $('#contractor').val("${termsAndConditions.contractor.id}");
         console.log('Set initial drop down values executed.');
     });
 
     /*When icon edit icon is clicked, set readOnly/disabled values to false and input/icon colors to appropriate colors*/
     $( "#editIcon" ).click(function() {
         console.log("Edit called.")
-        
+
         if(!clicked){
             $( "#office" ).prop('disabled', false)
             $( "#name" ).prop('readonly', false)

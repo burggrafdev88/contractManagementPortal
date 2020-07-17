@@ -16,7 +16,7 @@ class MasterAgreementController {
         println 'I made it to create for Master Agreements.'
         def contractorList = Contractor.getAll()
         def officeList = Office.getAll()
-        def bidTypeList = BidType.getAll()
+        def bidTypeList = BidTypeMasterAgreement.getAll()
 
         render(view: "create", model: [contractorList: contractorList, officeList: officeList, bidTypeList: bidTypeList])
     }
@@ -34,7 +34,7 @@ class MasterAgreementController {
         def masterAgreementInstance = MasterAgreement.get(id)
         def contractorList = Contractor.getAll()
         def officeList = Office.getAll()
-        def bidTypeList = BidType.getAll()
+        def bidTypeList = BidTypeMasterAgreement.getAll()
 
         render(view: "edit", model: [masterAgreement: masterAgreementInstance, contractorList: contractorList, officeList: officeList, bidTypeList: bidTypeList])
     }
@@ -64,7 +64,6 @@ class MasterAgreementController {
         masterAgreementService.deleteMasterAgreement(masterAgreementInstance)
 
         render(action: "index")
-//        redirect(action: "index")
     }
 
 }

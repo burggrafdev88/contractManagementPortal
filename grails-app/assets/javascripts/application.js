@@ -10,3 +10,4 @@
 //= require popper.min
 //= require_self
 //= require moment
+//= require datePicker

@@ -10,7 +10,7 @@ class MasterAgreement {
     Date   startDate
     Date   endDate
     Office office  //relationship type?
-    BidType bidType  //relationship type?
+    BidTypeMasterAgreement bidType  //relationship type?
     MasterAgreementStatus masterAgreementStatus  //relationship type?
 
     static hasMany = [sows: SOW]

@@ -94,8 +94,8 @@
                             aria-expanded="false">Terms & Conditions</g:link>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-%{--                            <g:link controller="" action="" class="dropdown-item">Add</g:link>--}%
-%{--                            <g:link controller="" action="" class="dropdown-item">View All</g:link>--}%
+                            <g:link controller="TermsAndConditions" action="create" class="dropdown-item">Add</g:link>
+                            <g:link controller="TermsAndConditions" action="index" class="dropdown-item">View All</g:link>
                         </div>
                     </li>
 

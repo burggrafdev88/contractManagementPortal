@@ -1,6 +1,6 @@
 package contractmanagementportal
 
-class BidType {
+class BidTypeTermsAndConditions {
     String name
 
     static constraints = {

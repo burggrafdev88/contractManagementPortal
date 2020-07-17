@@ -38,3 +38,5 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
 root(ERROR, ['STDOUT'])
+
+logger('demo', INFO, ['STDOUT'], false)  //added by PCB on 7/14 as part of cron job attempt

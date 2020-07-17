@@ -1,9 +1,9 @@
 package contractmanagementportal
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class BidTypeSpec extends Specification implements DomainUnitTest<BidType> {
+class TermsAndConditionsServiceSpec extends Specification implements ServiceUnitTest<TermsAndConditionsService>{
 
     def setup() {
     }

@@ -6,11 +6,13 @@ class BootStrap {
         new PaymentType(name: "ACH").save()
         new PaymentType(name: "Credit Card").save()
 
-        new BidType(name: "Competitive - Formal - RFP").save()
-        new BidType(name: "Competitive - Informal").save()
-//        new BidType(name: "No Bid").save()
-        new BidType(name: "Sole Source").save()
-        new BidType(name: "Exception to Bid").save()
+        new BidTypeMasterAgreement(name: "Competitive - Formal - RFP").save()
+        new BidTypeMasterAgreement(name: "Competitive - Informal").save()
+//        new BidTypeMasterAgreement(name: "No Bid").save()
+        new BidTypeMasterAgreement(name: "Sole Source").save()
+        new BidTypeMasterAgreement(name: "Exception to Bid").save()
+
+        new BidTypeTermsAndConditions(name: "Competitive - Informal").save()
 
         new ContractStatus(status: "Active").save()
         new ContractStatus(status: "Inactive").save()
@@ -26,6 +28,9 @@ class BootStrap {
 
         new MasterAgreementStatus(status: "Active").save()
         new MasterAgreementStatus(status: "Inactive").save()
+
+        new TermsAndConditionsStatus(status: "Active").save()
+        new TermsAndConditionsStatus(status: "Inactive").save()
 
 //        new Contractor(name: "Moore Engineering", street: "1800 Southwest Boulevard", city: "Kansas City", state: "MO",
 //        zip: "64108", payment_type_id: 1).save()
