@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="grid-item">
-%{--                    <g:link class="label" controller="" action="" params="[]">Add Invoice</g:link>--}%
+                    <g:link class="label" controller="TermsAndConditionsInvoice" action="create" params="[id: termsAndConditions.id]">Add Invoice</g:link>
                 </div>
 
                 <div class="grid-item">
@@ -147,11 +147,10 @@
     <table class="infoTable fullWidth" id="invoiceInfo">
         <tr>
             <th>#</th>
-            <th>SOW Name</th>
+            <th>Invoice #</th>
             <th>Invoice Total</th>
-            <th>SOW Amount</th>
-            <th>View</th>
-            <th class="centered">Expand</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
 
 %{--        <g:each status="i" var="s" in="${sow}">--}%
