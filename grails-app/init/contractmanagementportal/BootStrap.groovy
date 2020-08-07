@@ -14,6 +14,10 @@ class BootStrap {
 
         new BidTypeTermsAndConditions(name: "Competitive - Informal").save()
 
+        new BidTypeContract(name: "Competitive - Formal - RFP").save()
+        new BidTypeContract(name: "Sole Source").save()
+        new BidTypeContract(name: "Exception to Bid").save()
+
         new ContractStatus(status: "Active").save()
         new ContractStatus(status: "Inactive").save()
 
@@ -36,6 +40,7 @@ class BootStrap {
 //        zip: "64108", payment_type_id: 1).save()
 
     }
+
     def destroy = {
     }
 }

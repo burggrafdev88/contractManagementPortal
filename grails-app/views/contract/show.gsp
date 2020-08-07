@@ -1,38 +1,38 @@
 <%--
   Created by IntelliJ IDEA.
   User: pburg
-  Date: 7/16/2020
-  Time: 7:49 PM
+  Date: 8/7/2020
+  Time: 12:02 PM
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Terms and Conditions</title>
+    <title>Contract (RFP)</title>
     <meta name="layout" content="mainCMP"/>
 </head>
 
 <body>
 <div class="bodyContainer">
-    <h1>Terms and Conditions</h1>
-    <p>Listed below is the information pertaining to the selected Terms and Conditions.</p>
+    <h1>Contract (RFP)</h1>
+    <p>Listed below is the information pertaining to the selected Contract (RFP).</p>
     <hr>
 
     <div class="infoContainer">
         <div class="grid-container">
             <div class="grid-item">
                 <div class="label">Office:</div>
-                <div class="data">${termsAndConditions.office.name}</div>
+                <div class="data">${contract.office.name}</div>
             </div>
 
             <div class="grid-item">
                 <div class="label">Contract Name:</div>
-                <div class="data">${termsAndConditions.name}</div>
+                <div class="data">${contract.name}</div>
             </div>
 
             <div class="grid-item">
                 <div class="label">Contractor:</div>
-                <div class="data">${termsAndConditions.contractor.name}</div>
+                <div class="data">${contract.contractor.name}</div>
             </div>
 
             <div class="grid-item">
@@ -46,12 +46,12 @@
             <div class="grid-container">
                 <div class="grid-item">
                     <div class="label">Contract Start Date:</div>
-                    <div class="data date">${termsAndConditions.startDate}</div>
+                    <div class="data date">${contract.startDate}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">Contract End Date:</div>
-                    <div class="data date">${termsAndConditions.endDate}</div>
+                    <div class="data date">${contract.endDate}</div>
                 </div>
 
                 <div class="grid-item">
@@ -69,7 +69,7 @@
 
                 <div class="grid-item">
                     <div class="label">Contract Amount:</div>
-                    <div class="data currency">${termsAndConditions.spendCap}</div>
+                    <div class="data currency">${contract.spendCap}</div>
                 </div>
 
                 <div class="grid-item">
@@ -82,27 +82,27 @@
 
                 <div class="grid-item">
                     <div class="label">POC First Name:</div>
-                    <div class="data">${termsAndConditions.pointOfContactFName}</div>
+                    <div class="data">${contract.pointOfContactFName}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">POC Last Name:</div>
-                    <div class="data">${termsAndConditions.pointOfContactLName}</div>
+                    <div class="data">${contract.pointOfContactLName}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">POC Email:</div>
-                    <div class="data">${termsAndConditions.pointOfContactEmail}</div>
+                    <div class="data">${contract.pointOfContactEmail}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">POC Phone:</div>
-                    <div class="data">${termsAndConditions.pointOfContactPhone}</div>
+                    <div class="data">${contract.pointOfContactPhone}</div>
                 </div>
 
                 <div class="grid-item">
                     <div class="label">Bid Type</div>
-                    <div class="data">${termsAndConditions.bidType.name}</div>
+                    <div class="data">${contract.bidType.name}</div>
                 </div>
 
                 <div class="grid-item">
@@ -118,16 +118,16 @@
                 </div>
 
                 <div class="grid-item">
-                    <g:link class="label" controller="TermsAndConditionsInvoice" action="create" params="[id: termsAndConditions.id]">Add Invoice</g:link>
+                    <g:link class="label" controller="contractInvoice" action="create" params="[contractID: contract.id]">Add Invoice</g:link>
                 </div>
 
                 <div class="grid-item">
-                    <g:link class="label" controller="termsAndConditions" action="edit" params="[id: termsAndConditions.id]">Edit</g:link>
+%{--                    <g:link class="label" controller="contract" action="edit" params="[id: contract.id]">Edit</g:link>--}%
                 </div>
 
                 <div class="grid-item">
                     <form method="post" action="delete">
-                        <input name="id" value="${termsAndConditions.id}" hidden>
+                        <input name="id" value="${contract.id}" hidden>
                         <button type="submit" class="link-button">
                             Delete
                         </button>

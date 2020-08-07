@@ -52,7 +52,7 @@ class MasterAgreementController {
         println 'I made it to show for Master Agreement.'
         def masterAgreementInstance = MasterAgreement.get(id)
         def sowList = masterAgreementInstance.getSows()
-        println sowList.sum()
+//        println sowList.sum()
         println sowList
 
         render(view: "show", model: [masterAgreement: masterAgreementInstance, sow: sowList])

@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="col-15 removeLeftPadding">
-                    <select id="contractor" name="contractor">
+                    <select id="contractor" name="contractor" disabled>
                         <g:each in="${contractorList}" var="contractor">
                             <option value="${contractor.id}">${contractor.name}</option>
                         </g:each>

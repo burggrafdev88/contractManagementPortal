@@ -19,4 +19,16 @@ class TermsAndConditionsInvoiceService {
             println 'T&C invoice not saved'
         }
     }
+
+    @Transactional
+    def deleteTermsAndConditionsInvoice(TermsAndConditionsInvoice termsAndConditionsInvoiceInstance){
+        println 'I made it to the deleteTermsAndConditionsInvoice service'
+
+        /*What does .delete return? Logic here seems backwards so I inserted a ! */
+        if(!termsAndConditionsInvoiceInstance.delete(flush: true)){
+            println 'termsAndConditionsInvoiceInstance deleted'
+        } else{
+            println 'termsAndConditionsInvoiceInstance not deleted'
+        }
+    }
 }

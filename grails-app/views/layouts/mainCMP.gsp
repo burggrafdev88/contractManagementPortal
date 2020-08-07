@@ -79,12 +79,12 @@
 
                     <!--second unordered item-->
                     <li class="nav-item dropdown">
-                    <g:link class="nav-link dropdown-toggle" controller="masterAgreement" action="index" data-toggle="dropdown" aria-haspopup="true"
+                    <g:link class="nav-link dropdown-toggle" controller="contract" action="index" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">Contracts (RFPs)</g:link>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-%{--                            <g:link controller="" action="" class="dropdown-item">Add</g:link>--}%
-%{--                            <g:link controller="" action="" class="dropdown-item">View All</g:link>--}%
+                            <g:link controller="contract" action="create" class="dropdown-item">Add</g:link>
+                            <g:link controller="contract" action="index" class="dropdown-item">View All</g:link>
                         </div>
                     </li>
 

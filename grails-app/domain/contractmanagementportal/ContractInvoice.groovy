@@ -2,9 +2,9 @@ package contractmanagementportal
 
 class ContractInvoice {
     String invoiceNumber
-    Number amount
+    Double amount
 
-    static belongsTo = [contract: Contract]
+    static belongsTo = [contract: Contract]    //will cascade on contractor or Contract delete
 
     static constraints = {
     }

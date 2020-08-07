@@ -51,11 +51,10 @@ class TermsAndConditionsController {
     def show(Long id){
         println 'I made it to show for Terms and Conditions.'
         def termsAndConditionsInstance = TermsAndConditions.get(id)
-//        def sowList = masterAgreementInstance.getSows()
-//        println sowList.sum()
-//        println sowList
+        def invList = termsAndConditionsInstance.getTermsAndConditionsInvoices()
+        println invList
 
-        render(view: "show", model: [termsAndConditions: termsAndConditionsInstance])
+        render(view: "show", model: [termsAndConditions: termsAndConditionsInstance, invList: invList])
     }
 
     def delete(Long id){
