@@ -159,11 +159,11 @@
                 <td>${invoice.invoiceNumber}</td>
                 <td id="invoiceAmount${i + 1}" class="currency">${invoice.amount}</td>
                 <td>
-                    <g:link controller="termsAndConditionsInvoice" action="edit" params="[id: invoice.id]">Edit</g:link>
+                    <g:link controller="contractInvoice" action="edit" params="[id: invoice.id]">Edit</g:link>
                 </td>
 
                 <td>
-                    <g:link controller="termsAndConditionsInvoice" action="delete" params="[id: invoice.id]">Delete</g:link>
+                    <g:link controller="contractInvoice" action="delete" params="[id: invoice.id]">Delete</g:link>
                 </td>
             </tr>
 
