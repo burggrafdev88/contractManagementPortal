@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="grid-item">
-%{--                    <g:link class="label" controller="contract" action="edit" params="[id: contract.id]">Edit</g:link>--}%
+                    <g:link class="label" controller="contract" action="edit" params="[id: contract.id]">Edit</g:link>
                 </div>
 
                 <div class="grid-item">

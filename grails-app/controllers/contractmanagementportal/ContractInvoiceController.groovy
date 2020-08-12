@@ -18,13 +18,10 @@ class ContractInvoiceController {
 
     def save(){
         println 'I made it to save for contractInvoice.'
+
         def contractInvoiceInstance = new ContractInvoice(params)
         contractInvoiceService.saveContractInvoice(contractInvoiceInstance)
-
-        println 'next line...'
-        println contractInvoiceInstance.getContract().id
-
-        render 'test'
+        redirect(controller: "contract", action: "show", id: contractInvoiceInstance.getContract().id)
     }
 
     def update(Long id){
