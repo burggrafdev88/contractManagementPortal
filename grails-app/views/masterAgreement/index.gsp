@@ -16,7 +16,7 @@
 <div class="bodyContainer">
     <h1>Master Agreements</h1>
     <hr>
-    <p>Below are the Master Agreements for the 10th District.</p>
+    <p>Below are the Master Agreements for the District.</p>
 
     <table class="infoTable">
         <tr>

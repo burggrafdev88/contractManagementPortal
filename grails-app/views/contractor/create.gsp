@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-40">
-                    <input type="text" id="name" name="name" value="Philip">
+                    <input type="text" id="name" name="name" value="">
                 </div>
             </div>
 

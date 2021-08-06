@@ -16,7 +16,7 @@
 <div class="bodyContainer">
     <h1>Terms and Conditions</h1>
     <hr>
-    <p>Below are the Terms and Conditions with term lengths for the 10th District.</p>
+    <p>Below are the Terms and Conditions with term lengths for the District.</p>
 
     <table class="infoTable">
         <tr>
